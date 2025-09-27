@@ -1,59 +1,40 @@
-/* General Styles */
+/* style.css - KMNx Clan Theme */
+:root {
+  --white: #ffffff;
+  --red: #ff1f1f;
+  --black: #000000;
+  --muted: #f5f5f5;
+  --card-bg: #fafafa;
+}
+
+* { box-sizing: border-box; margin:0; padding:0; }
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #ffffff; /* White main background */
-  color: #000000; /* Default text black */
+  font-family: Inter, system-ui, Roboto, Arial, sans-serif;
+  background: var(--white);
+  color: var(--black);
 }
-
-/* Header */
-header {
-  background: #000000; /* Black */
-  padding: 20px;
-  text-align: center;
+.header {
+  background: var(--black);
+  color: var(--white);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-header h1 {
-  margin: 0;
-  font-size: 2rem;
-  color: #ff0000; /* Red */
-}
-
-nav {
-  margin-top: 10px;
-}
-
-nav a {
-  margin: 0 15px;
-  color: white;
+.header h1 { color: var(--red); font-size: 1.4rem; }
+.nav { background: var(--red); text-align: center; padding: 10px 0; }
+.nav a {
+  color: var(--white);
   text-decoration: none;
+  margin: 0 12px;
   font-weight: bold;
 }
-
-nav a:hover {
-  color: #ff0000; /* Red hover */
-}
-
-/* Main Content */
-main {
-  padding: 30px;
-  text-align: center;
-}
-
-.card {
-  background: #f4f4f4;
-  padding: 20px;
-  border-radius: 10px;
-  margin: 20px auto;
-  max-width: 800px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-/* Footer */
-footer {
-  background: #000000;
-  padding: 15px;
-  text-align: center;
-  color: white;
-  margin-top: 40px;
-}
+.container { max-width: 1100px; margin: 28px auto; padding: 0 16px; }
+.card { background: var(--card-bg); padding: 18px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); margin-bottom: 20px; }
+.members-list { list-style: none; padding:0; display: grid; gap: 8px; }
+.members-list li { background: var(--muted); padding: 10px 12px; border-left: 6px solid var(--red); border-radius:6px; }
+form.register-form { max-width: 480px; margin: 12px auto; display: flex; flex-direction: column; gap: 10px; }
+input[type="text"], input[type="email"] { padding:10px; border-radius:6px; border:1px solid #d0d0d0; font-size:14px; }
+button.primary { background: var(--red); color: var(--white); padding:10px; border:0; border-radius:8px; font-weight:700; cursor:pointer; }
+.small { font-size: 0.9rem; color:#444; }
+footer { background: var(--black); color: var(--white); text-align:center; padding:14px; margin-top:40px; }
