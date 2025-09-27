@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KMNx Tournaments</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>KMNx Tournaments</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="members.html">Members</a>
+      <a href="contact.html">Contact</a>
+      <a href="tournaments.html">Tournaments</a>
+    </nav>
+  </header>
 
+  <main>
+    <div class="card">
+      <h2>Register for Tournaments</h2>
+      <form id="tournamentForm">
+        <label>Discord Name:</label><br>
+        <input type="text" id="discordName" required><br><br>
+
+        <label>Standoff 2 ID:</label><br>
+        <input type="text" id="standoffId" required><br><br>
+
+        <button type="submit">Register</button>
+      </form>
+      <p id="message"></p>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> KMNx Clan
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  </footer>
+
+  <script>
+    document.getElementById("tournamentForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const discord = document.getElementById("discordName").value;
+      const standoff = document.getElementById("standoffId").value;
+      document.getElementById("message").innerText = 
+        "✅ Registered: " + discord + " (" + standoff + ")";
+      
+      // ⚠️ Right now, this does NOT save anywhere.
+      // Next step: connect Firebase or Google Sheets to store data permanently.
+    });
+  </script>
+</body>
+</html>
