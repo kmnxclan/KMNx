@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>KMNx Clan - Home</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KMNx Clan - Home</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <header class="header">
     <h1>KMNx Clan</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="members.html">Members</a>
-      <a href="contact.html">Contact</a>
-      <a href="tournaments.html">Tournaments</a>
-    </nav>
+    <div class="small">Standoff 2 Competitive Clan</div>
   </header>
 
-  <main>
-    <div class="card">
-      <h2>Welcome to KMNx Clan</h2>
-      <p>We are a competitive <strong>Standoff 2</strong> clan. Join us to dominate tournaments, grow as a team, and have fun.</p>
-      <p>🔥 Teamwork • Respect • Competition 🔥</p>
-    </div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="members.html">Members</a>
+    <a href="contact.html">Contact</a>
+    <a href="tournaments.html">Tournaments</a>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h2>Welcome to KMNx Clan 🎮</h2>
+      <p class="small">KMNx is a competitive Standoff 2 clan. Join us for tournaments, scrims, and a fun community on Discord & TikTok.</p>
+      <h3>Our Activities</h3>
+      <ul>
+        <li>Weekly scrims and practice sessions</li>
+        <li>Organized tournaments</li>
+        <li>Community events and giveaways</li>
+      </ul>
+    </section>
   </main>
 
   <footer>
-    © <span id="year"></span> KMNx Clan. All rights reserved.
-    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+    © <span id="year"></span> KMNx Clan
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
 </body>
 </html>
