@@ -29,23 +29,40 @@
 
     main {
       padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
     }
 
     h1 {
       color: #d32f2f;
+      margin-bottom: 0.5rem;
     }
 
-    .buttons {
-      margin-top: 2rem;
+    p.subtitle {
+      font-size: 1.2rem;
+      color: #444;
+      margin-bottom: 3rem;
+      max-width: 600px;
+    }
+
+    .contact-card {
+      background: #f9f9f9;
+      padding: 2rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       gap: 1.5rem;
-      flex-wrap: wrap;
     }
 
     .btn {
-      display: inline-block;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       padding: 1rem 2rem;
       background-color: #111;
       color: white;
@@ -53,10 +70,19 @@
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s;
+      width: 250px;
+      justify-content: center;
+      font-size: 1rem;
     }
 
     .btn:hover {
       background-color: #d32f2f;
+    }
+
+    .btn svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
     }
 
     .register-btn {
@@ -91,16 +117,10 @@
 
   <main>
     <h1>Contact Us</h1>
-    <p>Want to connect with the KMNx Clan?  
-       Join our community, follow us on TikTok, or contact the founder directly through Discord.</p>
+    <p class="subtitle">Join the fight, connect with the community, and never miss a tournament.  
+       KMNx Clan is just one click away!</p>
 
-    <div class="buttons">
-      <a href="https://discord.gg/4RzwsmgaXS" target="_blank" class="btn">Join Discord</a>
-      <a href="https://www.tiktok.com/@kmnx_standoff2" target="_blank" class="btn">Follow TikTok</a>
-      <a href="https://discord.com/users/473082074417332224" target="_blank" class="btn">Founder’s Discord</a>
-    </div>
-  </main>
-
-  <a href="tournaments.html" class="register-btn">Register for the Tournaments</a>
-</body>
-</html>
+    <div class="contact-card">
+      <a href="https://discord.gg/4RzwsmgaXS" target="_blank" class="btn">
+        <!-- Discord Icon -->
+        <svg viewBox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-
