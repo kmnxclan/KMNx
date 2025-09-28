@@ -3,40 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KMNx Clan - Members</title>
+  <title>KMNx Clan — Members</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <div class="logo" onclick="window.location.href='index.html'">
-      <img src="Discord Logo.jpg" alt="KMNx Logo">
-      <h1>KMNx Clan</h1>
+    <div class="logo">
+      <a href="index.html">
+        <img src="Discord Logo.jpg" alt="KMNx Logo">
+        <span>KMNx Clan</span>
+      </a>
     </div>
     <nav>
       <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="members.html" class="active">Members</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <section class="members">
     <h2>Our Members</h2>
-    <p>Meet the people who make KMNx what it is:</p>
-    <ul style="list-style:none; margin-top:20px; font-size:1.2rem;">
-      <li><strong>SNIPEx</strong> – Founder</li>
-      <li><strong>MATRIx</strong> – Co-Founder</li>
-    </ul>
-    <a href="https://discord.gg/4RzwsmgaXS" class="btn" target="_blank">Contact Us</a>
-  </main>
+    <div class="member-grid" id="memberGrid"></div>
+  </section>
 
   <footer>
-    <div class="socials">
-      <a href="https://discord.gg/4RzwsmgaXS" target="_blank">Discord</a>
-      <a href="https://www.tiktok.com/@kmnx_standoff2" target="_blank">TikTok</a>
-      <a href="https://discord.com/users/473082074417332224" target="_blank">Founder</a>
-    </div>
     <p>&copy; 2025 KMNx Clan. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Dynamic Members Array
+    const members = [
+      {name: "SNIPEx", role: "Founder"},
+      {name: "MATRIx", role: "Co-Founder"},
+      {name: "Player1", role: "Sniper"},
+      {name: "Player2", role: "Support"}
+    ];
+
+    const memberGrid = document.getElementById('memberGrid');
+
+    members.forEach(member => {
+      const div = document.createElement('div');
+      div.classList.add('member-card');
+      div.innerHTML = `<h3>${member.name}</h3><p>${member.role}</p>`;
+      memberGrid.appendChild(div);
+    });
+  </script>
 </body>
 </html>
