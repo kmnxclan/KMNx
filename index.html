@@ -3,36 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KMNx Clan - Home</title>
+  <title>KMNx Clan</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <div class="logo" onclick="window.location.href='index.html'">
-      <img src="Discord Logo.jpg" alt="KMNx Logo">
-      <h1>KMNx Clan</h1>
+    <div class="logo">
+      <a href="index.html">
+        <img src="Discord Logo.jpg" alt="KMNx Logo">
+        <span>KMNx Clan</span>
+      </a>
     </div>
     <nav>
       <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="members.html">Members</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#members">Members</a></li>
+        <li><a href="#contact">Contact Us</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <h2>Welcome to KMNx Clan</h2>
-    <p>We are a passionate Standoff 2 clan built on teamwork, competition, and respect. Our members are skilled players who value community and fair play.</p>
-    <p>Here you’ll find news about our clan, history, and upcoming events. Dive in and get to know us!</p>
-    <a href="about.html" class="btn">Read More</a>
-  </main>
-
-  <footer>
-    <div class="socials">
-      <a href="https://discord.gg/4RzwsmgaXS" target="_blank">Discord</a>
-      <a href="https://www.tiktok.com/@kmnx_standoff2" target="_blank">TikTok</a>
-      <a href="https://discord.com/users/473082074417332224" target="_blank">Founder</a>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Welcome to KMNx Clan</h1>
+      <p>Competitive • United • Strong</p>
     </div>
+  </section>
+
+  <!-- Members Section -->
+  <section id="members" class="members">
+    <h2>Our Members</h2>
+    <div class="member-grid">
+      <div class="member-card">
+        <h3>Player 1</h3>
+        <p>Role: Sniper</p>
+      </div>
+      <div class="member-card">
+        <h3>Player 2</h3>
+        <p>Role: Support</p>
+      </div>
+      <div class="member-card">
+        <h3>Player 3</h3>
+        <p>Role: Leader</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Join Tournament Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us / Join Tournaments</h2>
+    <p>Follow us on socials and stay connected.</p>
+    <div class="social-links">
+      <a href="#" class="btn">Discord</a>
+      <a href="#" class="btn">Twitter</a>
+      <a href="#" class="btn">Instagram</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
     <p>&copy; 2025 KMNx Clan. All rights reserved.</p>
   </footer>
 </body>
