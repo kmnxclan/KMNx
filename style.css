@@ -1,38 +1,35 @@
-/* --- General Settings --- */
+/* --- General Reset --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     background: url('background.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
-}
-
-a {
-    text-decoration: none;
-    color: white;
+    overflow-x: hidden;
 }
 
 /* --- Header --- */
 header {
     display: flex;
     align-items: center;
-    padding: 20px;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background: rgba(0,0,0,0.6);
     position: fixed;
     width: 100%;
     top: 0;
-    background: rgba(0, 0, 0, 0.7);
     z-index: 1000;
-    animation: slideDown 1s ease;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
 
 header img {
-    height: 50px;
-    margin-right: 15px;
+    height: 55px;
     cursor: pointer;
     transition: transform 0.3s;
 }
@@ -42,86 +39,108 @@ header img:hover {
 }
 
 header h1 {
+    color: #FF2B2B;
     font-size: 28px;
-    color: red;
+    letter-spacing: 1px;
 }
 
 /* --- Navigation --- */
-nav {
-    margin-left: auto;
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-nav a {
-    margin-left: 20px;
-    font-weight: bold;
-    transition: color 0.3s;
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #FF2B2B;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 nav a:hover {
-    color: red;
+    color: #FF2B2B;
 }
 
-/* --- Center Content --- */
-.main-container {
+/* --- Hero Section --- */
+.hero {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
+    align-items: center;
     text-align: center;
-    animation: fadeIn 2s ease;
-    padding-top: 80px;
+    height: 100vh;
+    padding-top: 100px;
+    backdrop-filter: blur(5px);
+}
+
+.hero h2 {
+    font-size: 48px;
+    color: #FF2B2B;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px black;
+    animation: fadeInDown 1s ease;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 800px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    animation: fadeInUp 1s ease;
 }
 
 /* --- Buttons --- */
-button, .button-link {
-    background-color: red;
-    color: white;
-    padding: 15px 30px;
+.button {
+    padding: 15px 40px;
+    margin: 10px;
     border: none;
-    margin: 10px;
-    border-radius: 10px;
+    border-radius: 12px;
     font-size: 18px;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    position: relative;
+    background: #FF2B2B;
+    color: white;
+    box-shadow: 0 0 15px rgba(255,43,43,0.5);
 }
 
-button:hover, .button-link:hover {
-    background-color: white;
-    color: red;
-    transform: scale(1.1);
-    box-shadow: 0 0 10px red, 0 0 20px white;
-}
-
-/* --- Member Buttons --- */
-.member-button {
-    background-color: black;
-    border: 2px solid red;
-    color: red;
-    margin: 10px;
-}
-
-.member-button:hover {
-    background-color: red;
-    color: black;
-    transform: scale(1.1);
+.button:hover {
+    color: #FF2B2B;
+    background: white;
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #FF2B2B;
 }
 
 /* --- Animations --- */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slideDown {
-    from { transform: translateY(-100px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 /* --- Footer --- */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 25px;
+    background: rgba(0,0,0,0.6);
     margin-top: 50px;
     color: white;
+    backdrop-filter: blur(5px);
 }
