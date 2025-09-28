@@ -1,216 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KMNx Clan — Contact</title>
-
-  <style>
-    :root{
-      --bg-1: #0f0f10;
-      --bg-2: #19191a;
-      --accent: #ff4444;
-      --muted: #c8d0d8;
-      --card-bg: rgba(8,10,12,0.55);
-      --glass: rgba(255,255,255,0.04);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-      background: linear-gradient(135deg,var(--bg-1),var(--bg-2));
-      color:#fff;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-
-    /* ---------- Header ---------- */
-    .nav {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:16px 28px;
-      background: rgba(15,15,16,0.85);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.35);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      position: sticky;
-      top:0;
-      z-index:60;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-    }
-    .nav:hover { background: rgba(15,15,16,0.95); box-shadow: 0 6px 20px rgba(0,0,0,0.45); }
-    .brand a{display:flex; gap:12px; align-items:center; text-decoration:none;}
-    .brand h1{ margin:0; color:var(--accent); font-size:1.35rem; letter-spacing:1px; transition: color 0.3s ease;}
-    .brand div{ color:#9aa6b2; font-size:.85rem; transition: color 0.3s ease; }
-    .brand:hover h1, .brand:hover div { color: var(--accent); }
-    .nav-links { display:flex; gap:22px; align-items:center; }
-    .nav-links a {
-      color:#fff;
-      text-decoration:none;
-      font-weight:700;
-      font-size:0.95rem;
-      padding:6px 8px;
-      border-radius:6px;
-      transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
-    }
-    .nav-links a:hover {
-      background: var(--accent);
-      color: #0b0b0b;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(255,68,68,0.3);
-    }
-
-    /* ---------- Hero ---------- */
-    .hero {
-      min-height: calc(100vh - 72px);
-      display:grid;
-      place-items:center;
-      padding:48px 20px;
-      text-align:center;
-    }
-    .card {
-      position:relative;
-      z-index:2;
-      width:min(820px,96%);
-      background:var(--card-bg);
-      border-radius:14px;
-      padding:28px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-      border:1px solid rgba(255,255,255,0.03);
-      backdrop-filter: blur(6px);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:18px;
-    }
-    .card h2{ color:var(--accent); font-size:2rem; margin:0; }
-    .card p.lead{ color:var(--muted); max-width:760px; line-height:1.5; }
-
-    /* ---------- Social Buttons ---------- */
-    .social-grid {
-      margin-top:12px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      justify-content:center;
-      align-items:center;
-    }
-    .social-btn {
-      display:flex;
-      align-items:center;
-      gap:12px;
-      padding:14px 22px;
-      min-width:220px;
-      text-decoration:none;
-      border-radius:10px;
-      background: rgba(255,255,255,0.03);
-      color: #fff;
-      font-weight:700;
-      transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
-      border:1px solid rgba(255,255,255,0.04);
-      justify-content:center;
-    }
-    .social-btn:hover{
-      transform: translateY(-6px);
-      background: var(--accent);
-      color: #0b0b0b;
-      box-shadow: 0 12px 30px rgba(255,68,68,0.14);
-    }
-
-    .social-btn .icon{ width:22px; height:22px; display:inline-block; flex:0 0 22px; }
-    .social-btn svg{ width:100%; height:100%; display:block; fill:currentColor; }
-
-    /* ---------- Register Button ---------- */
-    .register-btn {
-      margin-top:22px;
-      background:var(--accent);
-      color:#0b0b0b;
-      padding:12px 18px;
-      border-radius:12px;
-      font-weight:800;
-      text-decoration:none;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.45);
-      border: 2px solid rgba(255,255,255,0.06);
-      transition: transform .14s ease, box-shadow .14s ease;
-    }
-    .register-btn:hover{ transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0,0,0,0.6) }
-
-    .register-text { margin-top:16px; color:var(--muted); font-size:1rem; max-width:720px; }
-
-    @media (max-width:560px){
-      .card{ padding:18px }
-      .social-btn{ min-width:180px; padding:12px 16px }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="nav">
-    <div class="brand">
+  <header>
+    <div class="logo">
       <a href="index.html">
-        <h1>KMNx</h1>
-        <div>Standoff 2 Clan</div>
+        <img src="Discord Logo.jpg" alt="KMNx Logo">
+        <span>KMNx Clan</span>
       </a>
     </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="members.html">Members</a>
-      <a href="contact.html">Contact</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
     </nav>
   </header>
 
-  <main class="hero">
-    <article class="card">
-      <h2>Get in touch with KMNx</h2>
-      <p class="lead">
-        Join our community on Discord, follow our highlights on TikTok, or message the founder directly. 
-        We keep the clan active with scrims, events, and tournaments — you’ll always find players online.
-      </p>
+  <section class="contact">
+    <h2>Contact Us / Join Tournaments</h2>
+    <p>Follow our socials and stay updated with KMNx events.</p>
+    <div class="social-links">
+      <a href="https://discord.gg/4RzwsmgaXS" class="btn" target="_blank">Discord</a>
+      <a href="https://www.tiktok.com/@kmnx_standoff2" class="btn" target="_blank">TikTok</a>
+      <a href="https://discord.com/users/473082074417332224" class="btn" target="_blank">Founder Discord</a>
+      <a href="https://forms.gle/yskdRaY5iEvLSQ4w6" class="btn" target="_blank">Join Tournament</a>
+    </div>
+  </section>
 
-      <div class="social-grid">
-        <!-- Discord -->
-        <a class="social-btn" href="https://discord.gg/4RzwsmgaXS" target="_blank">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 71 55" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-              <path d="M60.104 4.552A58.13 58.13 0 0046.852.5a41.27 41.27 0 00-1.962 4.006 54.327 54.327 0 00-13.78 0A41.32 41.32 0 0029.149.5 58.19 58.19 0 0015.896 4.55C4.966 18.491 1.45 31.236 2.1 43.9a59.22 59.22 0 0017.7 8.979 42.28 42.28 0 003.754-6.128c-5.27-1.594-9.17-4.354-12.02-7.2 2.02-1.468 4.01-2.4 5.91-3.05a30.68 30.68 0 0018.872-.01c1.98.66 3.98 1.58 6.01 3.05-2.86 2.85-6.78 5.61-12.06 7.21a42.22 42.22 0 003.78 6.13 59.24 59.24 0 0017.71-8.98c.68-12.68-2.9-25.43-13.85-39.35z"/>
-            </svg>
-          </span>
-          Join Discord
-        </a>
-
-        <!-- TikTok -->
-        <a class="social-btn" href="https://www.tiktok.com/@kmnx_standoff2" target="_blank">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12.75 2c0 .966.784 1.75 1.75 1.75h.75a4.75 4.75 0 004.75 4.75v2.5a7.25 7.25 0 01-5.25-2.25V17a5.25 5.25 0 11-5.25-5.25h1.5v-3h-1.5A8.25 8.25 0 1016 17V7.621A9.735 9.735 0 0119.25 9V6.5a7.25 7.25 0 01-6.5-4.5z"/>
-            </svg>
-          </span>
-          Follow TikTok
-        </a>
-
-        <!-- Founder Discord -->
-        <a class="social-btn" href="https://discord.com/users/473082074417332224" target="_blank">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
-            </svg>
-          </span>
-          Founder’s Discord
-        </a>
-      </div>
-
-      <div class="register-text">
-        Click below to register for our tournaments. Make sure to fill in your Discord name, Standoff 2 ID, and other details to secure your spot!
-      </div>
-
-      <a class="register-btn" href="https://forms.gle/yskdRaY5iEvLSQ4w6" target="_blank">
-        Register for the Tournaments
-      </a>
-
-    </article>
-  </main>
+  <footer>
+    <p>&copy; 2025 KMNx Clan. All rights reserved.</p>
+  </footer>
 </body>
 </html>
