@@ -4,6 +4,50 @@
 <meta charset="UTF-8">
 <title>KMNx Clan Members</title>
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Extra styling just for the Members page */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.member-card {
+    background: rgba(255,255,255,0.08);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.member-card:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-5px);
+}
+.member-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.member-info {
+    display: none;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+</style>
+<script>
+function toggleInfo(id) {
+    const info = document.getElementById(id);
+    if (info.style.display === "block") {
+        info.style.display = "none";
+    } else {
+        document.querySelectorAll(".member-info").forEach(el => el.style.display = "none");
+        info.style.display = "block";
+    }
+}
+</script>
 </head>
 <body>
 
@@ -19,35 +63,62 @@
 </header>
 
 <div class="panel">
-    <h2>Our Members</h2>
-    <button class="member-button" onclick="openModal('SNIPEx')">SNIPEx (Founder)</button>
-    <button class="member-button" onclick="openModal('Matrix')">Matrix (Co-founder)</button>
-    <button class="member-button" onclick="openModal('Player1')">Player 1</button>
-    <button class="member-button" onclick="openModal('Player2')">Player 2</button>
-    <button class="member-button" onclick="openModal('Player3')">Player 3</button>
-</div>
+    <h2>Meet Our Members</h2>
+    <p>Click on a name to learn more about each member.</p>
 
-<div id="modal" class="modal">
-    <div class="modal-content" id="modal-content">
-        <h2>Player Name</h2>
-        <p>Information about this player will be added later.</p>
-        <button class="button" onclick="closeModal()">Close</button>
+    <!-- Founders Section -->
+    <div class="members-grid">
+        <div class="member-card" onclick="toggleInfo('snipx-info')">
+            <div class="member-name">SNIPEx (Founder)</div>
+            <div class="member-info" id="snipx-info">Leader and founder of KMNx Clan. Focused on strategy and leading the team to victory.</div>
+        </div>
+        <div class="member-card" onclick="toggleInfo('matrix-info')">
+            <div class="member-name">Matrix (Co-Founder)</div>
+            <div class="member-info" id="matrix-info">Co-founder and tactical mastermind. Helps manage training and tournaments.</div>
+        </div>
     </div>
+
+    <!-- Other Members -->
+    <div class="members-grid">
+        <div class="member-card" onclick="toggleInfo('player1-info')">
+            <div class="member-name">Player 1</div>
+            <div class="member-info" id="player1-info">Info about Player 1 goes here.</div>
+        </div>
+        <div class="member-card" onclick="toggleInfo('player2-info')">
+            <div class="member-name">Player 2</div>
+            <div class="member-info" id="player2-info">Info about Player 2 goes here.</div>
+        </div>
+        <div class="member-card" onclick="toggleInfo('player3-info')">
+            <div class="member-name">Player 3</div>
+            <div class="member-info" id="player3-info">Info about Player 3 goes here.</div>
+        </div>
+        <div class="member-card" onclick="toggleInfo('player4-info')">
+            <div class="member-name">Player 4</div>
+            <div class="member-info" id="player4-info">Info about Player 4 goes here.</div>
+        </div>
+    </div>
+
+    <div class="members-grid">
+        <div class="member-card" onclick="toggleInfo('player5-info')">
+            <div class="member-name">Player 5</div>
+            <div class="member-info" id="player5-info">Info about Player 5 goes here.</div>
+        </div>
+        <div class="member-card" onclick="toggleInfo('player6-info')">
+            <div class="member-name">Player 6</div>
+            <div class="member-info" id="player6-info">Info about Player 6 goes here.</div>
+        </div>
+        <div class="member-card" onclick="toggleInfo('player7-info')">
+            <div class="member-name">Player 7</div>
+            <div class="member-info" id="player7-info">Info about Player 7 goes here.</div>
+        </div>
+        <div class="member-card" onclick="toggleInfo('player8-info')">
+            <div class="member-name">Player 8</div>
+            <div class="member-info" id="player8-info">Info about Player 8 goes here.</div>
+        </div>
+    </div>
+
 </div>
 
 <footer>&copy; 2025 KMNx Clan. All Rights Reserved.</footer>
-
-<script>
-function openModal(name){
-    document.getElementById('modal').style.display='flex';
-    document.getElementById('modal-content').innerHTML=`
-        <h2>${name}</h2>
-        <p>Details about ${name} will be added soon!</p>
-        <button class="button" onclick="closeModal()">Close</button>
-    `;
-}
-function closeModal(){ document.getElementById('modal').style.display='none'; }
-</script>
-
 </body>
 </html>
