@@ -1,34 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>KMNx Clan Members</title>
-    <link rel="stylesheet" href="style.css">
-    <script>
-        function showInfo(name) {
-            alert(name + " information will be added soon!");
-        }
-    </script>
+<meta charset="UTF-8">
+<title>KMNx Clan Members</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <a href="index.html"><img src="Discord Logo.jpg" alt="Clan Logo"></a>
-        <h1>KMNx Clan</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="members.html">Members</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
 
-    <div class="main-container">
-        <h2>Our Members</h2>
-        <button class="member-button" onclick="showInfo('SNIPEx (Founder)')">SNIPEx (Founder)</button>
-        <button class="member-button" onclick="showInfo('Matrix (Co-founder)')">Matrix (Co-founder)</button>
-        <button class="member-button" onclick="showInfo('Player 1')">Player 1</button>
-        <button class="member-button" onclick="showInfo('Player 2')">Player 2</button>
-        <button class="member-button" onclick="showInfo('Player 3')">Player 3</button>
+<header>
+    <a href="index.html"><img src="Discord Logo.jpg" alt="Clan Logo"></a>
+    <h1>KMNx Clan</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="members.html">Members</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<div class="panel">
+    <h2>Our Members</h2>
+    <button class="member-button" onclick="openModal('SNIPEx')">SNIPEx (Founder)</button>
+    <button class="member-button" onclick="openModal('Matrix')">Matrix (Co-founder)</button>
+    <button class="member-button" onclick="openModal('Player1')">Player 1</button>
+    <button class="member-button" onclick="openModal('Player2')">Player 2</button>
+    <button class="member-button" onclick="openModal('Player3')">Player 3</button>
+</div>
+
+<div id="modal" class="modal">
+    <div class="modal-content" id="modal-content">
+        <h2>Player Name</h2>
+        <p>Information about this player will be added later.</p>
+        <button class="button" onclick="closeModal()">Close</button>
     </div>
+</div>
+
+<footer>&copy; 2025 KMNx Clan. All Rights Reserved.</footer>
+
+<script>
+function openModal(name){
+    document.getElementById('modal').style.display='flex';
+    document.getElementById('modal-content').innerHTML=`
+        <h2>${name}</h2>
+        <p>Details about ${name} will be added soon!</p>
+        <button class="button" onclick="closeModal()">Close</button>
+    `;
+}
+function closeModal(){ document.getElementById('modal').style.display='none'; }
+</script>
+
 </body>
 </html>
