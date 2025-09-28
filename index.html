@@ -1,148 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KMNx Clan</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KMNx Clan — Home</title>
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: Arial, sans-serif;
-      color: white;
-      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-      line-height: 1.6;
+    :root{
+      --bg-1: #0f0f10;
+      --bg-2: #19191a;
+      --accent: #ff4444;
+      --muted: #c8d0d8;
+      --card-bg: rgba(8,10,12,0.55);
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background: linear-gradient(135deg,var(--bg-1),var(--bg-2));
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
 
-    /* Navbar */
-    nav {
-      background: rgba(0,0,0,0.85);
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    /* ---------- Header ---------- */
+    .nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 28px;
+      background: rgba(15,15,16,0.85);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
       position: sticky;
-      top: 0;
-      z-index: 100;
+      top:0;
+      z-index:60;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
     }
-    nav h1 {
-      font-size: 1.6rem;
-      color: #ff4444;
-      letter-spacing: 2px;
+    .nav:hover {
+      background: rgba(15,15,16,0.95);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.45);
     }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
+    .brand a{display:flex; gap:12px; align-items:center; text-decoration:none;}
+    .brand h1{ margin:0; color:var(--accent); font-size:1.35rem; letter-spacing:1px; transition: color 0.3s ease;}
+    .brand div{ color:#9aa6b2; font-size:.85rem; transition: color 0.3s ease; }
+    .brand:hover h1, .brand:hover div { color: var(--accent); }
+    .nav-links { display:flex; gap:22px; align-items:center; }
+    .nav-links a {
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      font-size:0.95rem;
+      padding:6px 8px;
+      border-radius:6px;
+      transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
     }
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #ff4444;
+    .nav-links a:hover {
+      background: var(--accent);
+      color: #0b0b0b;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(255,68,68,0.3);
     }
 
-    /* Hero Section */
+    /* ---------- Hero ---------- */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 50px 20px;
-      background: url("https://imgs.search.brave.com/TK9IWt5uMpBpV2qUjWU7jvTcbmx_nxHb_q52JWIiLfQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzM2LzI1LzU4/LzM2MF9GXzEzNjI1/NTg1Nl9YR1BIVDZ6/eU5KYXk0OERwcnIw/YlRWWWI0WGxVdVNh/SS5qcGc") no-repeat center center/cover;
-      position: relative;
+      min-height: calc(100vh - 72px);
+      display:grid;
+      place-items:center;
+      padding:48px 20px;
+      text-align:center;
+      background-image: url("https://imgs.search.brave.com/PTkNeWzyGJ5AMS98V1S0lL3HlzhUW2SOkU3UZ63kVzU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvNGst/YmxhY2stMzg0MC14/LTIxNjAtYmFja2dy/b3VuZC10bzM1MnBs/cnd3bzJ1OWZ2Lmpw/Zw");
+      background-size:cover;
+      background-position:center;
+      position:relative;
     }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.7);
+    .hero::before {
+      content:"";
+      position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.7));
+      z-index:0;
     }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
+    .card {
+      position:relative;
+      z-index:2;
+      width:min(820px,96%);
+      background:var(--card-bg);
+      border-radius:14px;
+      padding:28px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      border:1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(6px);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:18px;
     }
-    .hero-content h2 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      color: #ff4444;
-    }
-    .hero-content p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      text-align: justify;
-    }
+    .card h2{ color:var(--accent); font-size:2rem; margin:0; }
+    .card p.lead{ color:var(--muted); max-width:760px; line-height:1.5; }
 
-    /* Read More button */
+    /* ---------- Read More Button ---------- */
     .read-more {
-      position: absolute;
-      bottom: 30px;
-      right: 40px;
-      padding: 12px 25px;
-      background: #ff4444;
-      color: white;
+      margin-top:20px;
+      background: var(--accent);
+      color: #0b0b0b;
+      padding: 12px 22px;
+      border-radius: 12px;
+      font-weight: 800;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background 0.3s;
-      z-index: 2;
+      box-shadow: 0 0 20px rgba(255, 68, 68, 0.6);
+      transition: transform .14s ease, box-shadow .14s ease, background .14s ease;
     }
     .read-more:hover {
-      background: #cc0000;
+      transform: translateY(-4px);
+      box-shadow: 0 0 30px rgba(255, 68, 68, 0.8);
+      background: #ff5555;
     }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-    }
+    @media (max-width:560px){ .card{ padding:18px } }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav>
-    <h1>KMNx Clan</h1>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="members.html">Members</a></li>
-      <li><a href="tournaments.html">Tournaments</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Welcome to KMNx Clan</h2>
-      <p>
-        Standoff 2 isn’t just another mobile FPS – it’s a game that built its own community over the years.  
-        Since its release, Standoff 2 has given players fast-paced, tactical gameplay with maps and modes that feel just as intense as on PC shooters.  
-        From casual matches to competitive tournaments, it’s a game that rewards skill, teamwork, and strategy.
-      </p>
-      <p>
-        Our clan, <strong>KMNx</strong>, was formed out of that same passion for the game.  
-        We started as a small group of friends who just loved playing together, grinding ranks late into the night.  
-        Over time, more players joined, and what was once a small squad turned into a growing community of competitive and casual players.  
-        Today, KMNx stands for more than just gaming – it’s about teamwork, respect, and improving together.
-      </p>
-      <p>
-        Whether you’re here to compete at the highest level or just to enjoy Standoff 2 with friends, KMNx is a place where you’ll feel at home.  
-      </p>
+  <!-- HEADER -->
+  <header class="nav">
+    <div class="brand">
+      <a href="index.html">
+        <h1>KMNx</h1>
+        <div>Standoff 2 Clan</div>
+      </a>
     </div>
-    <a href="about.html" class="read-more">Read More</a>
-  </section>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="members.html">Members</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 KMNx Clan | All Rights Reserved</p>
-  </footer>
+  <main class="hero">
+    <article class="card">
+      <h2>Welcome to KMNx Clan</h2>
+      <p class="lead">
+        KMNx is a competitive Standoff 2 clan, active in tournaments, scrims, and community events.
+        Learn the history of the game, join our community, and connect with top players worldwide.
+      </p>
+      <a href="about.html" class="read-more">Read More</a>
+    </article>
+  </main>
 </body>
 </html>
