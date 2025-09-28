@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KMNx Clan</title>
   <style>
-    /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: Arial, sans-serif;
       color: white;
       background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      line-height: 1.6;
     }
 
     /* Navbar */
     nav {
-      background: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.85);
       padding: 15px 40px;
       display: flex;
       justify-content: space-between;
@@ -26,7 +26,7 @@
       z-index: 100;
     }
     nav h1 {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       color: #ff4444;
       letter-spacing: 2px;
     }
@@ -47,11 +47,13 @@
 
     /* Hero Section */
     .hero {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
+      padding: 50px 20px;
       background: url("https://i.ibb.co/n1V5QFf/gaming-bg.jpg") no-repeat center center/cover;
       position: relative;
     }
@@ -59,21 +61,29 @@
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.7);
     }
     .hero-content {
       position: relative;
       z-index: 1;
+      max-width: 900px;
     }
     .hero-content h2 {
       font-size: 3rem;
       margin-bottom: 20px;
+      color: #ff4444;
     }
     .hero-content p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      text-align: justify;
     }
-    .hero-content a {
+
+    /* Read More button */
+    .read-more {
+      position: absolute;
+      bottom: 30px;
+      right: 40px;
       padding: 12px 25px;
       background: #ff4444;
       color: white;
@@ -81,8 +91,9 @@
       border-radius: 8px;
       font-weight: bold;
       transition: background 0.3s;
+      z-index: 2;
     }
-    .hero-content a:hover {
+    .read-more:hover {
       background: #cc0000;
     }
 
@@ -91,7 +102,6 @@
       text-align: center;
       padding: 20px;
       background: #111;
-      margin-top: 50px;
     }
   </style>
 </head>
@@ -112,9 +122,22 @@
   <section class="hero">
     <div class="hero-content">
       <h2>Welcome to KMNx Clan</h2>
-      <p>The home of competitive gamers. Join us and rise to the top.</p>
-      <a href="tournaments.html">Join a Tournament</a>
+      <p>
+        Standoff 2 isn’t just another mobile FPS – it’s a game that built its own community over the years.  
+        Since its release, Standoff 2 has given players fast-paced, tactical gameplay with maps and modes that feel just as intense as on PC shooters.  
+        From casual matches to competitive tournaments, it’s a game that rewards skill, teamwork, and strategy.
+      </p>
+      <p>
+        Our clan, <strong>KMNx</strong>, was formed out of that same passion for the game.  
+        We started as a small group of friends who just loved playing together, grinding ranks late into the night.  
+        Over time, more players joined, and what was once a small squad turned into a growing community of competitive and casual players.  
+        Today, KMNx stands for more than just gaming – it’s about teamwork, respect, and improving together.
+      </p>
+      <p>
+        Whether you’re here to compete at the highest level or just to enjoy Standoff 2 with friends, KMNx is a place where you’ll feel at home.  
+      </p>
     </div>
+    <a href="about.html" class="read-more">Read More</a>
   </section>
 
   <!-- Footer -->
