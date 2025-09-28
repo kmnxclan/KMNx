@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - KMNx Clan</title>
+  <title>Members - KMNx Clan</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -45,42 +45,75 @@
       color: #ff4444;
     }
 
-    /* Section */
-    .about {
+    /* Members Section */
+    .members {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
       padding: 50px 20px;
-      background: url("https://imgs.search.brave.com/DJ5Sfv9sdjUvF5RiQdtsXrx_E8X3Gw2MCfFDbcHNQ1g/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzE2LzE0Lzc0Lzcy/LzM2MF9GXzE2MTQ3/NDcyNDJfYW8ydm5n/TUtqRGhWS280Yjc4/MUhnOFpJUXJvano0/NnQuanBn") no-repeat center center/cover;
+      background: url("https://imgs.search.brave.com/TK9IWt5uMpBpV2qUjWU7jvTcbmx_nxHb_q52JWIiLfQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzM2LzI1LzU4/LzM2MF9GXzEzNjI1/NTg1Nl9YR1BIVDZ6/eU5KYXk0OERwcnIw/YlRWWWI0WGxVdVNh/SS5qcGc") no-repeat center center/cover;
       position: relative;
     }
-    .about::after {
+    .members::after {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0,0,0,0.7);
     }
-    .about-content {
+    .members-content {
       position: relative;
       z-index: 1;
-      max-width: 900px;
+      max-width: 1000px;
+      text-align: center;
     }
-    .about-content h2 {
+    .members-content h2 {
       font-size: 3rem;
       margin-bottom: 20px;
       color: #ff4444;
     }
-    .about-content p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      text-align: justify;
+
+    /* Member Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,68,68,0.2);
+    }
+    .card h3 {
+      color: #ff4444;
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #ccc;
     }
 
-    /* More About Members button */
-    .members-btn {
+    /* Discord Count */
+    .discord-count {
+      margin-top: 40px;
+      font-size: 1.1rem;
+      color: #fff;
+    }
+    .discord-count span {
+      color: #ff4444;
+      font-weight: bold;
+    }
+
+    /* Go to Contact button */
+    .contact-btn {
       position: absolute;
       bottom: 30px;
       right: 40px;
@@ -93,7 +126,7 @@
       transition: background 0.3s;
       z-index: 2;
     }
-    .members-btn:hover {
+    .contact-btn:hover {
       background: #cc0000;
     }
 
@@ -118,27 +151,25 @@
     </ul>
   </nav>
 
-  <!-- About Section -->
-  <section class="about">
-    <div class="about-content">
-      <h2>About KMNx</h2>
-      <p>
-        KMNx started as a small group of Standoff 2 players who shared the same passion for the game.  
-        What began as a few teammates grinding ranked matches quickly grew into something bigger – a community that feels like family.
-      </p>
-      <p>
-        Our clan is built on teamwork, loyalty, and dedication. We believe every member matters, no matter if you’re a casual player or a competitor chasing the top.  
-        What makes KMNx special is the mix of personalities – players who bring energy, skill, fun and creativity into every match.
-      </p>
-      <p>
-        Over time, we’ve taken part in tournaments, improved our strategies, and built connections not just inside the game, but also on Discord and beyond.  
-        KMNx isn’t just about winning – it’s about improving together and enjoying the game we all love.
-      </p>
-      <p>
-        This is where the story of KMNx continues, with every new member adding something unique to our clan.  
-      </p>
+  <!-- Members Section -->
+  <section class="members">
+    <div class="members-content">
+      <h2>Our Members</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>SNIPEx</h3>
+          <p>Founder • Leader • Visionary</p>
+        </div>
+        <div class="card">
+          <h3>MATRIx</h3>
+          <p>Co-Founder • Strategist • Support</p>
+        </div>
+      </div>
+      <div class="discord-count">
+        KMNx Discord currently has <span>50+</span> members!
+      </div>
     </div>
-    <a href="members.html" class="members-btn">More About Members</a>
+    <a href="contact.html" class="contact-btn">Go to Contact</a>
   </section>
 
   <!-- Footer -->
