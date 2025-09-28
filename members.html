@@ -1,37 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KMNx Clan - Members</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - KMNx Clan</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      background: rgba(0,0,0,0.85);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav h1 {
+      font-size: 1.6rem;
+      color: #ff4444;
+      letter-spacing: 2px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ff4444;
+    }
+
+    /* Section */
+    .about {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 50px 20px;
+      background: url("https://imgs.search.brave.com/DJ5Sfv9sdjUvF5RiQdtsXrx_E8X3Gw2MCfFDbcHNQ1g/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzE2LzE0Lzc0Lzcy/LzM2MF9GXzE2MTQ3/NDcyNDJfYW8ydm5n/TUtqRGhWS280Yjc4/MUhnOFpJUXJvano0/NnQuanBn") no-repeat center center/cover;
+      position: relative;
+    }
+    .about::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+    }
+    .about-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+    .about-content h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #ff4444;
+    }
+    .about-content p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    /* More About Members button */
+    .members-btn {
+      position: absolute;
+      bottom: 30px;
+      right: 40px;
+      padding: 12px 25px;
+      background: #ff4444;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+      z-index: 2;
+    }
+    .members-btn:hover {
+      background: #cc0000;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+    }
+  </style>
 </head>
 <body>
-<header class="header"><h1>KMNx Clan Members</h1></header>
-
-<nav class="nav">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="members.html">Members</a>
-  <a href="contact.html">Contact</a>
-  <a href="tournaments.html">Tournaments</a>
-</nav>
-
-<main class="container">
-  <section class="card">
-    <h2>Our Members</h2>
-    <ul class="members-list">
-      <li><b>SNIPEx</b> — Leader • Tactical • Motivator</li>
-      <li><b>MATRIx</b> — Loyal • Fast • Precise</li>
-      <li><b>PlayerY</b> — Support • Sniper • Teamplayer</li>
+  <!-- Navbar -->
+  <nav>
+    <h1>KMNx Clan</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="tournaments.html">Tournaments</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-    <p class="small" style="margin-top:12px">Discord Members: <strong>120+</strong></p>
-  </section>
-</main>
+  </nav>
 
-<footer>
-  © <span id="year"></span> KMNx Clan
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</footer>
+  <!-- About Section -->
+  <section class="about">
+    <div class="about-content">
+      <h2>About KMNx</h2>
+      <p>
+        KMNx started as a small group of Standoff 2 players who shared the same passion for the game.  
+        What began as a few teammates grinding ranked matches quickly grew into something bigger – a community that feels like family.
+      </p>
+      <p>
+        Our clan is built on teamwork, loyalty, and dedication. We believe every member matters, no matter if you’re a casual player or a competitor chasing the top.  
+        What makes KMNx special is the mix of personalities – players who bring energy, skill, fun and creativity into every match.
+      </p>
+      <p>
+        Over time, we’ve taken part in tournaments, improved our strategies, and built connections not just inside the game, but also on Discord and beyond.  
+        KMNx isn’t just about winning – it’s about improving together and enjoying the game we all love.
+      </p>
+      <p>
+        This is where the story of KMNx continues, with every new member adding something unique to our clan.  
+      </p>
+    </div>
+    <a href="members.html" class="members-btn">More About Members</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 KMNx Clan | All Rights Reserved</p>
+  </footer>
 </body>
 </html>
