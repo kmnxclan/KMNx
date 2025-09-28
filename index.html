@@ -1,41 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KMNx Clan - Home</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KMNx Clan</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    }
+
+    /* Navbar */
+    nav {
+      background: rgba(0,0,0,0.8);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav h1 {
+      font-size: 1.5rem;
+      color: #ff4444;
+      letter-spacing: 2px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ff4444;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: url("https://i.ibb.co/n1V5QFf/gaming-bg.jpg") no-repeat center center/cover;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-content h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .hero-content a {
+      padding: 12px 25px;
+      background: #ff4444;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .hero-content a:hover {
+      background: #cc0000;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
+  <!-- Navbar -->
+  <nav>
     <h1>KMNx Clan</h1>
-    <div class="small">Standoff 2 Competitive Clan</div>
-  </header>
-
-  <nav class="nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="members.html">Members</a>
-    <a href="contact.html">Contact</a>
-    <a href="tournaments.html">Tournaments</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="tournaments.html">Tournaments</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </nav>
 
-  <main class="container">
-    <section class="card">
-      <h2>Welcome to KMNx Clan 🎮</h2>
-      <p class="small">KMNx is a competitive Standoff 2 clan. Join us for tournaments, scrims, and a fun community on Discord & TikTok.</p>
-      <h3>Our Activities</h3>
-      <ul>
-        <li>Weekly scrims and practice sessions</li>
-        <li>Organized tournaments</li>
-        <li>Community events and giveaways</li>
-      </ul>
-    </section>
-  </main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Welcome to KMNx Clan</h2>
+      <p>The home of competitive gamers. Join us and rise to the top.</p>
+      <a href="tournaments.html">Join a Tournament</a>
+    </div>
+  </section>
 
+  <!-- Footer -->
   <footer>
-    © <span id="year"></span> KMNx Clan
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <p>© 2025 KMNx Clan | All Rights Reserved</p>
   </footer>
 </body>
 </html>
