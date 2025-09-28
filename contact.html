@@ -1,36 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KMNx Clan - Contact</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KMNx Clan - Contact</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #111;
+    }
+
+    header {
+      background-color: #111;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 3rem;
+      text-align: center;
+    }
+
+    h1 {
+      color: #d32f2f;
+    }
+
+    .buttons {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background-color: #111;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #d32f2f;
+    }
+
+    .register-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #d32f2f;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .register-btn:hover {
+      background-color: black;
+    }
+  </style>
 </head>
 <body>
-<header class="header"><h1>Contact KMNx</h1></header>
+  <header>
+    <h1>KMNx Clan</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="members.html">Members</a>
+      <a href="contact.html">Contact</a>
+      <a href="tournaments.html">Tournaments</a>
+    </nav>
+  </header>
 
-<nav class="nav">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="members.html">Members</a>
-  <a href="contact.html">Contact</a>
-  <a href="tournaments.html">Tournaments</a>
-</nav>
+  <main>
+    <h1>Contact Us</h1>
+    <p>Want to connect with the KMNx Clan?  
+       Join our community, follow us on TikTok, or contact the founder directly through Discord.</p>
 
-<main class="container">
-  <section class="card">
-    <h2>Contact & Links</h2>
-    <ul>
-      <li>TikTok: <a href="https://www.tiktok.com/@kmnx_standoff2" target="_blank">@kmnx_standoff2</a></li>
-      <li>Discord: <a href="https://www.discord.gg/4RzwsmgaXS" target="_blank">Join our Discord</a></li>
-      <li>Owner (Discord): <a href="https://discord.com/users/473082074417332224" target="_blank">SNIPEx's Profile</a></li>
-    </ul>
-  </section>
-</main>
+    <div class="buttons">
+      <a href="https://discord.gg/4RzwsmgaXS" target="_blank" class="btn">Join Discord</a>
+      <a href="https://www.tiktok.com/@kmnx_standoff2" target="_blank" class="btn">Follow TikTok</a>
+      <a href="https://discord.com/users/473082074417332224" target="_blank" class="btn">Founder’s Discord</a>
+    </div>
+  </main>
 
-<footer>
-  © <span id="year"></span> KMNx Clan
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</footer>
+  <a href="tournaments.html" class="register-btn">Register for the Tournaments</a>
 </body>
 </html>
