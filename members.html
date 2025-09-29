@@ -13,6 +13,9 @@
     color: white;
     min-height: 100vh;
     padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     overflow-x: hidden;
   }
 
@@ -37,7 +40,6 @@
     padding: 5px 12px;
     border-radius: 8px;
     transition: all 0.3s ease;
-    animation: floatNav 3s ease-in-out infinite alternate;
   }
 
   .header-nav a:hover {
@@ -45,12 +47,6 @@
     color: black;
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(230,57,70,0.9);
-  }
-
-  @keyframes floatNav {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-    100% { transform: translateY(0); }
   }
 
   /* Particle background */
@@ -61,77 +57,87 @@
     z-index: -1;
   }
 
-  h1, h2 {
-    text-align: center;
+  h1 {
+    font-size: 3rem;
     color: #ff4c4c;
     text-shadow: 0 0 20px #ff4c4c,0 0 40px #ff6f61;
     margin-bottom: 20px;
+    text-align: center;
   }
 
-  h1 { font-size: 3rem; }
-  h2 { font-size: 2rem; margin-top: 40px; }
-
-  @keyframes floatText {
-    0%,100% {transform: translateY(0);}
-    50% {transform: translateY(-5px);}
+  .team-title {
+    font-size: 2rem;
+    color: #e63946;
+    margin: 20px 0;
+    text-align: center;
   }
 
-  /* Members grid */
   .members-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    gap: 25px;
-    max-width: 1000px;
-    margin: 20px auto 50px auto;
-    padding: 0 20px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+    margin-bottom: 40px;
+    justify-items: center;
   }
 
   .member-card {
     background: rgba(26,26,26,0.8);
     border: 2px solid #e63946;
-    border-radius: 15px;
+    border-radius: 12px;
     padding: 20px;
     text-align: center;
+    width: 160px;
+    box-shadow: 0 0 20px rgba(230,57,70,0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    animation: floatCard 4s ease-in-out infinite alternate;
   }
 
   .member-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 25px #e63946, 0 0 50px rgba(230,57,70,0.6);
+    box-shadow: 0 0 40px rgba(230,57,70,0.9);
   }
 
   .member-card img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 2px solid #ff4c4c;
-    margin-bottom: 15px;
-    object-fit: cover;
-    box-shadow: 0 0 15px #ff4c4c;
+    margin-bottom: 10px;
+    border: 2px solid #e63946;
   }
 
   .member-card h3 {
-    margin: 5px 0;
-    font-size: 1.4rem;
-    color: #ff4c4c;
-    text-shadow: 0 0 10px #ff4c4c;
+    margin: 10px 0 5px;
+    font-size: 1.2rem;
   }
 
   .member-card p {
-    margin: 0;
+    font-size: 0.9rem;
     color: #ccc;
   }
 
-  @keyframes floatCard {
-    0%,100% {transform: translateY(0);}
-    50% {transform: translateY(-5px);}
+  /* Call-to-action button */
+  .btn-contact {
+    display: inline-block;
+    margin: 30px 0 50px 0;
+    padding: 18px 40px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    border: 2px solid #e63946;
+    background: rgba(26,26,26,0.8);
+    box-shadow: 0 0 20px rgba(230,57,70,0.5);
+    transition: all 0.3s ease;
   }
 
-  /* Spacer between managing team and members */
-  .spacer { height: 1.5rem; }
+  .btn-contact:hover {
+    background: linear-gradient(135deg,#e63946,#ff6f61);
+    color: black;
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(230,57,70,0.9);
+  }
 
   footer {
     text-align: center;
@@ -155,68 +161,34 @@
 
 <h1>Our Members</h1>
 
-<!-- Managing Team Section -->
-<h2>Managing Team</h2>
+<h2 class="team-title">Managing Team</h2>
 <div class="members-grid">
   <div class="member-card">
-    <img src="Discord Logo.jpg" alt="SNIPEx">
+    <img src="snipex.jpg" alt="SNIPEx">
     <h3>SNIPEx</h3>
     <p>Founder</p>
   </div>
   <div class="member-card">
-    <img src="Discord Logo.jpg" alt="MATRIx">
+    <img src="matrix.jpg" alt="MATRIx">
     <h3>MATRIx</h3>
     <p>Co-Founder</p>
   </div>
 </div>
 
-<!-- Spacer -->
-<div class="spacer"></div>
-
-<!-- Other Members Section -->
-<h2>Our Members</h2>
+<h2 class="team-title">Clan Members</h2>
 <div class="members-grid">
-  <div class="member-card">
-    <img src="Discord Logo.jpg" alt="Player1">
-    <h3>Player1</h3>
-    <p>Member</p>
-  </div>
-  <div class="member-card">
-    <img src="Discord Logo.jpg" alt="Player2">
-    <h3>Player2</h3>
-    <p>Member</p>
-  </div>
-  <div class="member-card">
-    <img src="Discord Logo.jpg" alt="Player3">
-    <h3>Player3</h3>
-    <p>Member</p>
-  </div>
-  <div class="member-card">
-    <img src="Discord Logo.jpg" alt="Player4">
-    <h3>Player4</h3>
-    <p>Member</p>
-  </div>
-  <div class="member-card">
-    <img src="Discord Logo.jpg" alt="Player5">
-    <h3>Player5</h3>
-    <p>Member</p>
-  </div>
-  <div class="member-card">
-    <img src="Discord Logo.jpg" alt="Player6">
-    <h3>Player6</h3>
-    <p>Member</p>
-  </div>
-  <div class="member-card">
-    <img src="Discord Logo.jpg" alt="Player7">
-    <h3>Player7</h3>
-    <p>Member</p>
-  </div>
-  <div class="member-card">
-    <img src="Discord Logo.jpg" alt="Player8">
-    <h3>Player8</h3>
-    <p>Member</p>
-  </div>
+  <div class="member-card"><img src="member1.jpg" alt="Member1"><h3>Member1</h3></div>
+  <div class="member-card"><img src="member2.jpg" alt="Member2"><h3>Member2</h3></div>
+  <div class="member-card"><img src="member3.jpg" alt="Member3"><h3>Member3</h3></div>
+  <div class="member-card"><img src="member4.jpg" alt="Member4"><h3>Member4</h3></div>
+  <div class="member-card"><img src="member5.jpg" alt="Member5"><h3>Member5</h3></div>
+  <div class="member-card"><img src="member6.jpg" alt="Member6"><h3>Member6</h3></div>
+  <div class="member-card"><img src="member7.jpg" alt="Member7"><h3>Member7</h3></div>
+  <div class="member-card"><img src="member8.jpg" alt="Member8"><h3>Member8</h3></div>
 </div>
+
+<!-- Call-to-action button -->
+<a href="contact.html" class="btn-contact"><i class="fa-solid fa-handshake"></i> Be Part of Our Team</a>
 
 <footer>© 2025 KMNx Clan | Members Page</footer>
 
@@ -225,12 +197,12 @@
 <script>
   particlesJS("particles-js", {
     particles: {
-      number:{value:100},
+      number:{value:80},
       color:{value:"#ff4c4c"},
       shape:{type:"circle"},
-      opacity:{value:0.6},
+      opacity:{value:0.5},
       size:{value:3},
-      line_linked:{enable:true,distance:150,color:"#ff4c4c",opacity:0.3,width:1},
+      line_linked:{enable:true,distance:120,color:"#ff4c4c",opacity:0.3,width:1},
       move:{enable:true,speed:2}
     },
     interactivity:{events:{onhover:{enable:true,mode:"repulse"}}},
