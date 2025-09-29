@@ -1,94 +1,267 @@
-/* --- Reset & Base --- */
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+/* ----------------- GENERAL ----------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    background: url('background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  min-height: 100vh;
+  background: #0d0d0d;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
 }
 
-/* --- Header --- */
-header {
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:15px 50px;
-    background: rgba(0,0,0,0.6);
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:1000;
-    backdrop-filter:blur(10px);
-}
-header img { height:40px; cursor:pointer; transition:0.3s; }
-header img:hover { transform:scale(1.1); }
-header h1 { color:#FF2B2B; font-size:26px; letter-spacing:1px; }
-
-/* --- Nav --- */
-nav a {
-    color:white; text-decoration:none; margin-left:25px;
-    font-weight:500; position:relative; transition:0.3s;
-}
-nav a::after {
-    content:''; position:absolute; width:0%; height:2px;
-    background:#FF2B2B; bottom:-5px; left:0; transition:0.3s;
-}
-nav a:hover::after { width:100%; }
-nav a:hover { color:#FF2B2B; }
-
-/* --- Panels --- */
-.panel {
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(10px);
-    padding:40px 60px; border-radius:20px;
-    max-width:900px; margin:150px auto 50px; text-align:center;
-    animation: fadeIn 1s ease forwards;
-}
-.panel h2 { font-size:36px; color:#FF2B2B; margin-bottom:20px; text-shadow:2px 2px 5px black; }
-.panel p { font-size:18px; line-height:1.6; margin-bottom:30px; }
-
-/* --- Hero Section --- */
-.hero {
-    display:flex; flex-direction:column;
-    justify-content:center; align-items:center;
-    text-align:center; height:100vh; padding-top:80px;
-    background: rgba(0,0,0,0.4);
+/* Animated gradient background for all pages */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, #e63946, #1a1a1a, #111, #e63946);
+  background-size: 400% 400%;
+  animation: gradientMove 20s infinite;
+  z-index: -1;
 }
 
-/* --- Buttons --- */
-.button {
-    padding:15px 40px; margin:10px; border:none; border-radius:12px;
-    font-size:18px; font-weight:600; cursor:pointer;
-    transition: all 0.4s ease;
-    background:#FF2B2B; color:white;
-    box-shadow:0 0 15px rgba(255,43,43,0.5);
-}
-.button:hover {
-    color:#FF2B2B; background:white; transform:translateY(-5px);
-    box-shadow:0 0 25px #FF2B2B;
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* --- Member Buttons & Modals --- */
-.member-button {
-    background:black; border:2px solid #FF2B2B; color:#FF2B2B;
-    margin:10px; padding:12px 30px; border-radius:12px; cursor:pointer;
-    transition: all 0.3s ease;
-}
-.member-button:hover { background:#FF2B2B; color:black; transform:scale(1.1); }
-
-.modal { display:none; position:fixed; z-index:2000;
-    left:0; top:0; width:100%; height:100%;
-    background-color:rgba(0,0,0,0.85);
-    justify-content:center; align-items:center;
-}
-.modal-content {
-    background: rgba(0,0,0,0.85);
-    padding:30px; border-radius:15px; text-align:center;
-    max-width:500px; color:white;
+/* ----------------- HEADERS ----------------- */
+h1 {
+  font-size: 3rem;
+  color: #e63946;
+  text-shadow: 0 0 20px rgba(230,57,70,1), 0 0 40px rgba(230,57,70,0.8);
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-/* --- Footer --- */
-footer { text-align:center; padding:25px; background:rgba(0,0,0,0.6); color:white; backdrop-filter:blur(5px); }
+p {
+  font-size: 1.2rem;
+  color: #ccc;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-/* --- Animations --- */
-@keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+.highlight {
+  color: #e63946;
+  font-weight: bold;
+}
+
+/* ----------------- FOOTER ----------------- */
+footer {
+  margin-top: 50px;
+  font-size: 14px;
+  color: #ccc;
+  text-align: center;
+}
+
+/* ----------------- BUTTONS ----------------- */
+button, .btn {
+  background: #e63946;
+  color: black;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(230,57,70,0.7);
+}
+
+button:hover, .btn:hover {
+  background: #ff6f61;
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(230,57,70,1);
+  color: black;
+  text-decoration: none;
+}
+
+/* ----------------- LINKS ----------------- */
+a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #e63946;
+}
+
+/* ----------------- MEMBERS CARDS ----------------- */
+.card {
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  padding-top: 120%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  box-shadow: 0 0 20px rgba(230,57,70,0.4);
+}
+
+.card-front {
+  background: #1a1a1a;
+  border: 2px solid #e63946;
+}
+
+.card-front img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #e63946;
+  margin-bottom: 15px;
+}
+
+.card-front h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: white;
+}
+
+.card-front span {
+  font-size: 0.9rem;
+  color: #e63946;
+  margin-top: 5px;
+}
+
+.card-back {
+  background: linear-gradient(135deg, #e63946, #ff6f61);
+  transform: rotateY(180deg);
+  color: black;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* ----------------- GRIDS ----------------- */
+.top-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 50px;
+  width: 90%;
+  max-width: 700px;
+  margin-bottom: 60px;
+}
+
+.members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ----------------- FORMS ----------------- */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 500px;
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(230,57,70,0.5);
+}
+
+input, textarea {
+  background: #0d0d0d;
+  border: 2px solid #e63946;
+  border-radius: 10px;
+  color: white;
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #ff6f61;
+  box-shadow: 0 0 15px rgba(230,57,70,0.7);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ----------------- CONTACT LINKS ----------------- */
+.contact-links {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  color: white;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #e63946;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(230,57,70,0.5);
+}
+
+.contact-links a:hover {
+  background: #ff6f61;
+  color: black;
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(230,57,70,1);
+}
+
+/* ----------------- SECTIONS (ABOUT PAGE) ----------------- */
+.section {
+  background: rgba(26,26,26,0.8);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 20px rgba(230,57,70,0.5);
+  width: 90%;
+  max-width: 900px;
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 768px) {
+  h1 { font-size: 2.2rem; }
+  p { font-size: 1rem; }
+  .top-members, .members { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 30px; }
+}
