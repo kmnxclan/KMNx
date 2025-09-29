@@ -1,34 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Contact KMNx Clan</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KMNx Clan Contact</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d0d0d;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 50px 20px;
+      overflow-x: hidden;
+    }
+
+    /* Animated gradient background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 200%; height: 200%;
+      background: linear-gradient(45deg, #e63946, #1a1a1a, #111, #e63946);
+      background-size: 400% 400%;
+      animation: gradientMove 20s infinite;
+      z-index: -1;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #e63946;
+      text-shadow: 0 0 20px rgba(230,57,70,1), 0 0 40px rgba(230,57,70,0.8);
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      max-width: 500px;
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(230,57,70,0.5);
+    }
+
+    input, textarea {
+      background: #0d0d0d;
+      border: 2px solid #e63946;
+      border-radius: 10px;
+      color: white;
+      padding: 12px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #ff6f61;
+      box-shadow: 0 0 15px rgba(230,57,70,0.7);
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      background: #e63946;
+      color: black;
+      border: none;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(230,57,70,0.7);
+    }
+
+    button:hover {
+      background: #ff6f61;
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(230,57,70,1);
+    }
+
+    .contact-links {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      color: white;
+      font-size: 1.3rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid #e63946;
+      padding: 10px 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(230,57,70,0.5);
+    }
+
+    .contact-links a:hover {
+      background: #ff6f61;
+      color: black;
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(230,57,70,1);
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+  </style>
 </head>
 <body>
+  <h1>Contact KMNx Clan</h1>
+  <p>Have a question? Want to join? Get in touch! ⚡</p>
 
-<header>
-    <a href="index.html"><img src="Discord Logo.jpg" alt="Clan Logo"></a>
-    <h1>KMNx Clan</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="members.html">Members</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
+  <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+  </form>
 
-<div class="panel">
-    <h2>Contact Us</h2>
-    <p>Have questions or want to join KMNx Clan? Reach out to us via Discord, TikTok, or our tournament registration form below!</p>
-    <div>
-        <button class="button" onclick="window.open('https://discord.gg/4RzwsmgaXS','_blank')">Discord</button>
-        <button class="button" onclick="window.open('https://www.tiktok.com/@kmnx_standoff2','_blank')">TikTok</button>
-        <button class="button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdLf1Pyc5LlYXeHroc9CeDnsVFhjv-7yw8y5w-zbfSEu0BBhQ/viewform','_blank')">Tournament Registration</button>
-    </div>
-</div>
+  <div class="contact-links">
+    <a href="https://discord.gg/yourinvite"><i class="fa-brands fa-discord"></i> Discord</a>
+    <a href="mailto:your-email@example.com"><i class="fa-solid fa-envelope"></i> Email</a>
+    <a href="https://yourwebsite.com"><i class="fa-solid fa-globe"></i> Website</a>
+  </div>
 
-<footer>&copy; 2025 KMNx Clan. All Rights Reserved.</footer>
+  <footer>© 2025 KMNx Clan | Contact Page</footer>
 </body>
 </html>
