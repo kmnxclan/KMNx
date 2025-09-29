@@ -1,35 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>KMNx Clan - Home</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KMNx Clan</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d0d0d;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Particle background */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0; left: 0;
+      z-index: -1;
+    }
+
+    /* Logo pulse animation */
+    .logo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #e63946;
+      box-shadow: 0 0 30px rgba(230,57,70,1), 0 0 60px rgba(230,57,70,0.7);
+      animation: pulse 2s infinite alternate, float 4s ease-in-out infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 30px rgba(230,57,70,0.7); }
+      100% { transform: scale(1.1); box-shadow: 0 0 50px rgba(230,57,70,1); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-10px) scale(1.02); }
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #e63946;
+      text-shadow: 0 0 20px rgba(230,57,70,1), 0 0 40px rgba(230,57,70,0.8);
+      margin: 10px 0;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    p {
+      font-size: 1.3rem;
+      color: #ccc;
+      margin-bottom: 30px;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Buttons */
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 30px;
+      background: #1a1a1a;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border-radius: 12px;
+      border: 2px solid #e63946;
+      box-shadow: 0 0 20px rgba(230,57,70,0.5);
+      transition: 0.3s ease;
+    }
+
+    .buttons a:hover {
+      background: linear-gradient(135deg, #e63946, #ff6f61);
+      color: black;
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(230,57,70,0.9);
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
+  <div id="particles-js"></div>
 
-<header>
-    <a href="index.html"><img src="Discord Logo.jpg" alt="Clan Logo"></a>
-    <h1>KMNx Clan</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="members.html">Members</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
+  <img src="Discord Logo.jpg" alt="KMNx Logo" class="logo">
+  <h1>KMNx Clan</h1>
+  <p>Join the elite. Play with us. Dominate the battlefield. 🚀</p>
 
-<section class="hero">
-    <div class="panel">
-        <h2>Welcome to KMNx Clan</h2>
-        <p>Professional Standoff 2 clan focused on teamwork, competitive gameplay, and tournaments. Join us to rise through the ranks and be part of our elite community.</p>
-        <div>
-            <button class="button" onclick="window.open('https://link.standoff2.com/en/referral/bind/72690035','_blank')">Play Standoff 2</button>
-            <button class="button" onclick="window.location.href='about.html'">Learn More</button>
-        </div>
-    </div>
-</section>
+  <div class="buttons">
+    <a href="members.html"><i class="fa-solid fa-users"></i> Members</a>
+    <a href="links.html"><i class="fa-solid fa-link"></i> Links</a>
+    <a href="https://discord.gg/yourinvite"><i class="fa-brands fa-discord"></i> Discord</a>
+  </div>
 
-<footer>&copy; 2025 KMNx Clan. All Rights Reserved.</footer>
+  <footer>© 2025 KMNx Clan | Home Page</footer>
+
+  <!-- Particle JS -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 100 },
+        "color": { "value": "#e63946" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "line_linked": { "enable": true, "distance": 150, "color": "#e63946", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 2 }
+      },
+      "interactivity": { "events": { "onhover": { "enable": true, "mode": "repulse" } } },
+      "retina_detect": true
+    });
+  </script>
 </body>
 </html>
