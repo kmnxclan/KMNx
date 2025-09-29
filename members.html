@@ -1,126 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>KMNx Clan Members</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* Extra styling just for the Members page */
-.members-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-.member-card {
-    background: rgba(255,255,255,0.08);
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    transition: 0.3s;
-    cursor: pointer;
-}
-.member-card:hover {
-    background: rgba(255,255,255,0.15);
-    transform: translateY(-5px);
-}
-.member-name {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #fff;
-}
-.member-info {
-    display: none;
-    font-size: 0.9rem;
-    color: #ddd;
-}
-</style>
-<script>
-function toggleInfo(id) {
-    const info = document.getElementById(id);
-    if (info.style.display === "block") {
-        info.style.display = "none";
-    } else {
-        document.querySelectorAll(".member-info").forEach(el => el.style.display = "none");
-        info.style.display = "block";
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KMNx Clan Members</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d0d0d;
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
     }
-}
-</script>
+
+    /* Animated gradient background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, #e63946, #1a1a1a, #111, #e63946);
+      background-size: 400% 400%;
+      animation: gradientMove 20s infinite;
+      z-index: -1;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      margin: 30px 0 10px;
+      font-size: 2.8rem;
+      color: #fff;
+      text-shadow: 0 0 20px rgba(230,57,70,0.9);
+    }
+
+    p {
+      color: #bbb;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+
+    /* Grid for members */
+    .members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* Flip card effect */
+    .card {
+      perspective: 1000px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      padding-top: 120%; /* keeps square shape */
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border-radius: 15px;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      box-shadow: 0 0 20px rgba(230,57,70,0.4);
+    }
+
+    .card-front {
+      background: #1a1a1a;
+      border: 2px solid #e63946;
+    }
+
+    .card-front img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid #e63946;
+      margin-bottom: 15px;
+    }
+
+    .card-front h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: white;
+    }
+
+    .card-back {
+      background: linear-gradient(135deg, #e63946, #ff6f61);
+      transform: rotateY(180deg);
+      color: black;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
+  <h1>KMNx Clan Members</h1>
+  <p>Meet the warriors of KMNx ⚡</p>
 
-<header>
-    <a href="index.html"><img src="Discord Logo.jpg" alt="Clan Logo"></a>
-    <h1>KMNx Clan</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="members.html">Members</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
-
-<div class="panel">
-    <h2>Meet Our Members</h2>
-    <p>Click on a name to learn more about each member.</p>
-
-    <!-- Founders Section -->
-    <div class="members-grid">
-        <div class="member-card" onclick="toggleInfo('snipx-info')">
-            <div class="member-name">SNIPEx (Founder)</div>
-            <div class="member-info" id="snipx-info">Leader and founder of KMNx Clan. 
-                All-rounded player with sharp instincts, master at predicting enemy moves, natural team leader and shot-caller, brings strategy and confidence, also the guy who says “one more game” at 3 AM.</div>
+  <div class="members">
+    <!-- Member Cards -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Discord Logo.jpg" alt="SNIPEx">
+          <h3>SNIPEx</h3>
         </div>
-        <div class="member-card" onclick="toggleInfo('matrix-info')">
-            <div class="member-name">Matrix (Co-Founder)</div>
-            <div class="member-info" id="matrix-info">Co-founder. 
-                Aggressive playstyle, fearless pusher, loyal supporter of SNIPEx on and off the battlefield, always ready to charge first and ask questions later, the teammate you want behind you or in front, soaking up the bullets.</div>
+        <div class="card-back">
+          Co-Founder, AWP King, patient sniper who never misses 🎯
         </div>
+      </div>
     </div>
 
-    <!-- Other Members -->
-    <div class="members-grid">
-        <div class="member-card" onclick="toggleInfo('player1-info')">
-            <div class="member-name">Searching for Player.</div>
-            <div class="member-info" id="player1-info">Info about Player.</div>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Discord Logo.jpg" alt="MATRIx">
+          <h3>MATRIx</h3>
         </div>
-        <div class="member-card" onclick="toggleInfo('player2-info')">
-            <div class="member-name">Searching for Player.</div>
-            <div class="member-info" id="player2-info">Info about Player.</div>
+        <div class="card-back">
+          Co-Founder, aggressive pusher, fearless entry fragger 💥
         </div>
-        <div class="member-card" onclick="toggleInfo('player3-info')">
-            <div class="member-name">Searching for Player.</div>
-            <div class="member-info" id="player3-info">Info about Player.</div>
-        </div>
-        <div class="member-card" onclick="toggleInfo('player4-info')">
-            <div class="member-name">Searching for Player.</div>
-            <div class="member-info" id="player4-info">Info about Player.</div>
-        </div>
+      </div>
     </div>
 
-    <div class="members-grid">
-        <div class="member-card" onclick="toggleInfo('player5-info')">
-            <div class="member-name">Searching for Player.</div>
-            <div class="member-info" id="player5-info">Info about Player.</div>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Discord Logo.jpg" alt="Player 3">
+          <h3>Player 3</h3>
         </div>
-        <div class="member-card" onclick="toggleInfo('player6-info')">
-            <div class="member-name">Searching for Player.</div>
-            <div class="member-info" id="player6-info">Info about Player.</div>
+        <div class="card-back">
+          Support role, always has the team’s back 🛡️
         </div>
-        <div class="member-card" onclick="toggleInfo('player7-info')">
-            <div class="member-name">Searching for Player.</div>
-            <div class="member-info" id="player7-info">Info about Player.</div>
-        </div>
-        <div class="member-card" onclick="toggleInfo('player8-info')">
-            <div class="member-name">Searching for Player.</div>
-            <div class="member-info" id="player8-info">Info about Player.</div>
-        </div>
+      </div>
     </div>
 
-</div>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Discord Logo.jpg" alt="Player 4">
+          <h3>Player 4</h3>
+        </div>
+        <div class="card-back">
+          Entry fragger, fast reflexes and fearless attacks ⚡
+        </div>
+      </div>
+    </div>
 
-<footer>&copy; 2025 KMNx Clan. All Rights Reserved.</footer>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Discord Logo.jpg" alt="Player 5">
+          <h3>Player 5</h3>
+        </div>
+        <div class="card-back">
+          IGL (In-Game Leader), master strategist 🧠
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Discord Logo.jpg" alt="Player 6">
+          <h3>Player 6</h3>
+        </div>
+        <div class="card-back">
+          Clutch king, shines when it matters most 🔥
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Discord Logo.jpg" alt="Player 7">
+          <h3>Player 7</h3>
+        </div>
+        <div class="card-back">
+          Entry support, knows when to push or hold 🎮
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Discord Logo.jpg" alt="Player 8">
+          <h3>Player 8</h3>
+        </div>
+        <div class="card-back">
+          Scout, feeds intel and maps enemies 👀
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Discord Logo.jpg" alt="Player 9">
+          <h3>Player 9</h3>
+        </div>
+        <div class="card-back">
+          Sharpshooter, clean aim and precise shots 🎯
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Discord Logo.jpg" alt="Player 10">
+          <h3>Player 10</h3>
+        </div>
+        <div class="card-back">
+          All-rounder, adapts to any role as needed 🔄
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 KMNx Clan | Members Page
+  </footer>
 </body>
 </html>
