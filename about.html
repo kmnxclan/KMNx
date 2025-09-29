@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About - KMNx Clan</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
 <style>
   body {
     margin: 0;
@@ -15,6 +14,15 @@
     min-height: 100vh;
     overflow-x: hidden;
     padding-top: 80px; /* space for fixed header */
+  }
+
+  /* Particle background */
+  #particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    z-index: -1;
   }
 
   /* Top header nav bar */
@@ -60,15 +68,32 @@
     text-shadow: 0 0 20px rgba(230,57,70,1),0 0 40px rgba(230,57,70,0.8);
     margin-bottom: 20px;
     text-align: center;
+    animation: fadeIn 1.5s ease forwards, floatText 4s ease-in-out infinite alternate;
   }
 
   p {
     font-size: 1.3rem;
     color: #ccc;
     max-width: 800px;
-    margin: 15px auto;
+    margin: 20px auto;
     line-height: 1.6;
     text-align: center;
+    animation: fadeIn 2s ease forwards;
+  }
+
+  strong {
+    color: #e63946;
+    text-shadow: 0 0 10px rgba(230,57,70,0.8);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes floatText {
+    0%,100%{transform: translateY(0);}
+    50%{transform: translateY(-5px);}
   }
 
   footer {
@@ -89,13 +114,34 @@
   <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
 </nav>
 
+<!-- Particle background -->
+<div id="particles-js"></div>
+
 <!-- About content -->
 <h1>About KMNx Clan</h1>
-<p>KMNx Clan is a professional gaming clan dedicated to excellence in competitive gaming. Founded by <strong>SNIPEx</strong> and <strong>MATRIx</strong>, our mission is to bring together skilled players who are passionate about teamwork, strategy, and victory.</p>
+<p>KMNx Clan is a professional gaming clan dedicated to excellence in competitive gaming. Founded by <strong>SNIPEx</strong> and <strong>MATRIx</strong>, our mission is to bring together skilled players who are passionate about <strong>teamwork</strong>, <strong>strategy</strong>, and <strong>victory</strong>.</p>
 <p>We participate in tournaments, organize friendly competitions, and offer a welcoming environment for players looking to grow their skills. Every member is encouraged to contribute, collaborate, and level up their gameplay while being part of a supportive community.</p>
 <p>Whether you're aiming to compete seriously or just want to enjoy the game with friends, KMNx Clan is the perfect place to challenge yourself and connect with like-minded gamers.</p>
 
 <footer>© 2025 KMNx Clan | About Page</footer>
+
+<!-- Particle JS -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("particles-js", {
+    particles: {
+      number:{value:80},
+      color:{value:"#e63946"},
+      shape:{type:"circle"},
+      opacity:{value:0.5},
+      size:{value:3},
+      line_linked:{enable:true,distance:150,color:"#e63946",opacity:0.4,width:1},
+      move:{enable:true,speed:2}
+    },
+    interactivity:{events:{onhover:{enable:true,mode:"repulse"}}},
+    retina_detect:true
+  });
+</script>
 
 </body>
 </html>
