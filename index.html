@@ -118,23 +118,34 @@
   .buttons a {
     display: inline-block;
     margin: 10px;
-    padding: 15px 30px;
+    padding: 18px 40px;
     background: #1a1a1a;
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.2rem;
-    border-radius: 12px;
+    font-size: 1.3rem;
+    border-radius: 15px;
     border: 2px solid #e63946;
-    box-shadow: 0 0 20px rgba(230,57,70,0.5);
+    box-shadow: 0 0 25px rgba(230,57,70,0.5);
     transition: 0.3s ease;
+    animation: pulseButton 2s infinite alternate, floatButton 3s ease-in-out infinite alternate;
   }
 
   .buttons a:hover {
     background: linear-gradient(135deg,#e63946,#ff6f61);
     color: black;
-    transform: scale(1.1);
-    box-shadow: 0 0 40px rgba(230,57,70,0.9);
+    transform: scale(1.15);
+    box-shadow: 0 0 50px rgba(230,57,70,1);
+  }
+
+  @keyframes pulseButton {
+    0% { box-shadow: 0 0 20px rgba(230,57,70,0.5); }
+    100% { box-shadow: 0 0 40px rgba(230,57,70,0.9); }
+  }
+
+  @keyframes floatButton {
+    0%,100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-5px) scale(1.02); }
   }
 
   footer {
@@ -149,10 +160,9 @@
 <!-- Header navigation -->
 <nav class="header-nav">
   <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-  <a href="members.html"><i class="fa-solid fa-users"></i> Members</a>
   <a href="about.html"><i class="fa-solid fa-info-circle"></i> About</a>
+  <a href="members.html"><i class="fa-solid fa-users"></i> Members</a>
   <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
-  <a href="links.html"><i class="fa-solid fa-link"></i> Links</a>
 </nav>
 
 <div id="particles-js"></div>
@@ -162,9 +172,8 @@
 <p>Join the elite. Play with us. Dominate the battlefield. 🚀</p>
 
 <div class="buttons">
-  <a href="members.html"><i class="fa-solid fa-users"></i> Members</a>
-  <a href="links.html"><i class="fa-solid fa-link"></i> Links</a>
-  <a href="https://discord.gg/yourinvite"><i class="fa-brands fa-discord"></i> Discord</a>
+  <a href="https://discord.gg/yourinvite"><i class="fa-brands fa-discord"></i> Join Standoff 2</a>
+  <a href="about.html"><i class="fa-solid fa-info-circle"></i> About</a>
 </div>
 
 <footer>© 2025 KMNx Clan | Home Page</footer>
