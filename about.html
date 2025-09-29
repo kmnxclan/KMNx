@@ -12,8 +12,11 @@
     background: #0d0d0d;
     color: white;
     min-height: 100vh;
-    overflow-x: hidden;
     padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
   }
 
   /* Header nav */
@@ -37,7 +40,6 @@
     padding: 5px 12px;
     border-radius: 8px;
     transition: all 0.3s ease;
-    animation: floatNav 3s ease-in-out infinite alternate;
   }
 
   .header-nav a:hover {
@@ -45,12 +47,6 @@
     color: black;
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(230,57,70,0.9);
-  }
-
-  @keyframes floatNav {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-    100% { transform: translateY(0); }
   }
 
   /* Particle background */
@@ -61,81 +57,33 @@
     z-index: -1;
   }
 
-  /* Floating neon blocks */
-  .highlight-block {
-    position: absolute;
-    width: 150px; height: 60px;
-    background: rgba(230,57,70,0.1);
-    border: 2px solid rgba(230,57,70,0.3);
-    border-radius: 15px;
-    filter: blur(10px);
-    z-index: 0;
-    animation: floatBlock 6s ease-in-out infinite alternate;
-  }
-  .highlight-block:nth-child(1){top:200px; left:10%;}
-  .highlight-block:nth-child(2){top:400px; right:15%;}
-  .highlight-block:nth-child(3){top:600px; left:25%;}
-
-  @keyframes floatBlock {
-    0% {transform: translateY(0) rotate(0deg);}
-    50% {transform: translateY(-20px) rotate(5deg);}
-    100% {transform: translateY(0) rotate(0deg);}
-  }
-
-  /* Headings */
   h1 {
     font-size: 3rem;
     color: #ff4c4c;
     text-shadow: 0 0 20px #ff4c4c,0 0 40px #ff6f61;
     margin-bottom: 20px;
     text-align: center;
-    animation: floatText 4s ease-in-out infinite alternate, fadeIn 1.5s ease forwards;
   }
 
-  @keyframes floatText {
-    0%,100% {transform: translateY(0);}
-    50% {transform: translateY(-5px);}
-  }
-
-  /* Paragraphs */
   p {
-    font-size: 1.3rem;
-    color: #ccc;
     max-width: 800px;
-    margin: 25px auto;
-    line-height: 1.6;
     text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s ease;
-    position: relative;
-    z-index: 1;
-  }
-
-  p strong {
-    background: linear-gradient(135deg,#e63946,#ff6f61);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 10px rgba(230,57,70,0.8);
-  }
-
-  p.visible {
-    opacity: 1;
-    transform: translateY(0);
-    text-shadow: 0 0 15px rgba(255,76,76,0.8);
+    font-size: 1.2rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin: 20px;
   }
 
   footer {
-    margin-top: 50px;
-    font-size: 14px;
-    color: #777;
     text-align: center;
+    margin-bottom: 50px;
+    color: #777;
   }
 </style>
 </head>
 <body>
 
-<!-- Header navigation -->
+<!-- Header nav -->
 <nav class="header-nav">
   <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
   <a href="about.html"><i class="fa-solid fa-info-circle"></i> About</a>
@@ -146,16 +94,17 @@
 <!-- Particle background -->
 <div id="particles-js"></div>
 
-<!-- Floating neon blocks -->
-<div class="highlight-block"></div>
-<div class="highlight-block"></div>
-<div class="highlight-block"></div>
-
-<!-- About content -->
 <h1>About KMNx Clan</h1>
-<p>KMNx Clan is a professional gaming clan dedicated to excellence in competitive gaming. Founded by <strong>SNIPEx</strong> and <strong>MATRIx</strong>, our mission is to bring together skilled players who are passionate about <strong>teamwork</strong>, <strong>strategy</strong>, and <strong>victory</strong>.</p>
-<p>We participate in tournaments, organize friendly competitions, and offer a welcoming environment for players looking to grow their skills. Every member is encouraged to contribute, collaborate, and level up their gameplay while being part of a supportive community.</p>
-<p>Whether you're aiming to compete seriously or just want to enjoy the game with friends, KMNx Clan is the perfect place to challenge yourself and connect with like-minded gamers.</p>
+
+<p>
+KMNx Clan is a community built on <strong>skill</strong>, <strong>strategy</strong>, and <strong>teamwork</strong>. Our members compete in tournaments, enjoy casual gameplay, and push each other to reach new heights.  
+</p>
+<p>
+Led by our founders <strong>SNIPEx</strong> and <strong>MATRIx</strong>, we focus on creating a welcoming and competitive environment for gamers of all levels. Whether you're joining for fun or aiming for the top, KMNx Clan is your arena.
+</p>
+<p>
+We’re more than just a clan — we’re a family. Connect with us, follow our journey, and become part of the legend. 🚀
+</p>
 
 <footer>© 2025 KMNx Clan | About Page</footer>
 
@@ -164,28 +113,16 @@
 <script>
   particlesJS("particles-js", {
     particles: {
-      number:{value:100},
+      number:{value:80},
       color:{value:"#ff4c4c"},
       shape:{type:"circle"},
-      opacity:{value:0.6},
+      opacity:{value:0.5},
       size:{value:3},
-      line_linked:{enable:true,distance:150,color:"#ff4c4c",opacity:0.3,width:1},
+      line_linked:{enable:true,distance:120,color:"#ff4c4c",opacity:0.3,width:1},
       move:{enable:true,speed:2}
     },
     interactivity:{events:{onhover:{enable:true,mode:"repulse"}}},
     retina_detect:true
-  });
-
-  // Scroll reveal effect
-  const paragraphs = document.querySelectorAll('p');
-  window.addEventListener('scroll', () => {
-    const triggerBottom = window.innerHeight / 5 * 4;
-    paragraphs.forEach(p => {
-      const pTop = p.getBoundingClientRect().top;
-      if(pTop < triggerBottom){
-        p.classList.add('visible');
-      }
-    });
   });
 </script>
 
