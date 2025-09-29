@@ -14,9 +14,6 @@
     min-height: 100vh;
     padding-top: 80px;
     overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   /* Header nav */
@@ -80,7 +77,7 @@
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
     gap: 25px;
     max-width: 1000px;
-    margin: 20px auto 20px auto;
+    margin: 20px auto 50px auto;
     padding: 0 20px;
   }
 
@@ -128,6 +125,9 @@
     50% {transform: translateY(-5px);}
   }
 
+  /* Spacer between managing team and members */
+  .spacer { height: 1.5rem; }
+
   /* Call-to-action button */
   .btn-contact {
     display: inline-block;
@@ -152,11 +152,7 @@
     box-shadow: 0 0 40px rgba(230,57,70,0.9);
   }
 
-  footer {
-    text-align: center;
-    margin-bottom: 50px;
-    color: #777;
-  }
+  footer { text-align: center; margin-bottom: 50px; color: #777; }
 </style>
 </head>
 <body>
@@ -189,17 +185,20 @@
   </div>
 </div>
 
+<!-- Spacer -->
+<div class="spacer"></div>
+
 <!-- Other Members Section -->
 <h2>Our Members</h2>
 <div class="members-grid">
-  <div class="member-card"><img src="Discord Logo.jpg" alt="Player1"><h3>Player1</h3></div>
-  <div class="member-card"><img src="Discord Logo.jpg" alt="Player2"><h3>Player2</h3></div>
-  <div class="member-card"><img src="Discord Logo.jpg" alt="Player3"><h3>Player3</h3></div>
-  <div class="member-card"><img src="Discord Logo.jpg" alt="Player4"><h3>Player4</h3></div>
-  <div class="member-card"><img src="Discord Logo.jpg" alt="Player5"><h3>Player5</h3></div>
-  <div class="member-card"><img src="Discord Logo.jpg" alt="Player6"><h3>Player6</h3></div>
-  <div class="member-card"><img src="Discord Logo.jpg" alt="Player7"><h3>Player7</h3></div>
-  <div class="member-card"><img src="Discord Logo.jpg" alt="Player8"><h3>Player8</h3></div>
+  <div class="member-card"><img src="Discord Logo.jpg" alt="Player1"><h3>Player1</h3><p>Member</p></div>
+  <div class="member-card"><img src="Discord Logo.jpg" alt="Player2"><h3>Player2</h3><p>Member</p></div>
+  <div class="member-card"><img src="Discord Logo.jpg" alt="Player3"><h3>Player3</h3><p>Member</p></div>
+  <div class="member-card"><img src="Discord Logo.jpg" alt="Player4"><h3>Player4</h3><p>Member</p></div>
+  <div class="member-card"><img src="Discord Logo.jpg" alt="Player5"><h3>Player5</h3><p>Member</p></div>
+  <div class="member-card"><img src="Discord Logo.jpg" alt="Player6"><h3>Player6</h3><p>Member</p></div>
+  <div class="member-card"><img src="Discord Logo.jpg" alt="Player7"><h3>Player7</h3><p>Member</p></div>
+  <div class="member-card"><img src="Discord Logo.jpg" alt="Player8"><h3>Player8</h3><p>Member</p></div>
 </div>
 
 <!-- Call-to-action button -->
@@ -224,6 +223,5 @@
     retina_detect:true
   });
 </script>
-
 </body>
 </html>
