@@ -93,9 +93,9 @@
     padding: 20px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: floatCard 4s ease-in-out infinite alternate;
     position: relative;
     overflow: hidden;
+    animation: floatCard 4s ease-in-out infinite alternate;
   }
 
   .member-card:hover {
@@ -129,6 +129,9 @@
     0%,100% {transform: translateY(0);}
     50% {transform: translateY(-5px);}
   }
+
+  /* Spacer between managing team and members */
+  .spacer { height: 1.5rem; }
 
   footer {
     text-align: center;
@@ -168,7 +171,7 @@
 </div>
 
 <!-- Spacer -->
-<div style="height: 3rem;"></div>
+<div class="spacer"></div>
 
 <!-- Other Members Section -->
 <h2>Our Members</h2>
