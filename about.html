@@ -1,31 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>About KMNx Clan</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About KMNx Clan</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d0d0d;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 50px 20px;
+      overflow-x: hidden;
+    }
+
+    /* Animated gradient background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 200%; height: 200%;
+      background: linear-gradient(45deg, #e63946, #1a1a1a, #111, #e63946);
+      background-size: 400% 400%;
+      animation: gradientMove 20s infinite;
+      z-index: -1;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #e63946;
+      text-shadow: 0 0 20px rgba(230,57,70,1), 0 0 40px rgba(230,57,70,0.8);
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #ccc;
+      max-width: 900px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      color: #e63946;
+      font-weight: bold;
+    }
+
+    .section {
+      background: rgba(26,26,26,0.8);
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 20px rgba(230,57,70,0.5);
+      width: 90%;
+      max-width: 900px;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+  </style>
 </head>
 <body>
+  <h1>About KMNx Clan</h1>
 
-<header>
-    <a href="index.html"><img src="Discord Logo.jpg" alt="Clan Logo"></a>
-    <h1>KMNx Clan</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="members.html">Members</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
+  <div class="section">
+    <p><span class="highlight">KMNx Clan</span> is a professional gaming clan built for players who want to dominate the battlefield and have fun while doing it. Founded by <span class="highlight">SNIPEx</span> and co-led by <span class="highlight">MATRIx</span>, our team thrives on strategy, skill, and teamwork.</p>
+  </div>
 
-<div class="panel">
-    <h2>About Our Clan</h2>
-    <p>KMNx Clan is a competitive Standoff 2 clan founded by SNIPEx and Matrix. We focus on teamwork, strategy, and tournaments. Our goal is to provide a professional environment where players can improve, collaborate, and enjoy the game to the fullest.</p>
-    <p>We host regular events, training sessions, and competitions. Whether you’re a beginner or a pro, KMNx Clan welcomes all players who are passionate about Standoff 2 and want to grow in a friendly but competitive community.</p>
-    <button class="button" onclick="window.location.href='members.html'">Meet Our Members</button>
-</div>
+  <div class="section">
+    <p>Our goal is to create a community where players can grow, compete, and enjoy high-level gameplay. We support each other both <span class="highlight">in-game</span> and <span class="highlight">off-game</span> and welcome anyone passionate about gaming.</p>
+  </div>
 
-<footer>&copy; 2025 KMNx Clan. All Rights Reserved.</footer>
+  <div class="section">
+    <p>From <span class="highlight">casual matches</span> to <span class="highlight">tournaments</span>, KMNx Clan provides a space where every player can improve, contribute, and become part of a professional environment. Join us, be part of the legacy, and <span class="highlight">level up</span> with the best!</p>
+  </div>
+
+  <footer>© 2025 KMNx Clan | About Page</footer>
 </body>
 </html>
