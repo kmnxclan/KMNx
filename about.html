@@ -13,19 +13,10 @@
     color: white;
     min-height: 100vh;
     overflow-x: hidden;
-    padding-top: 80px; /* space for fixed header */
+    padding-top: 80px;
   }
 
-  /* Particle background */
-  #particles-js {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0; left: 0;
-    z-index: -1;
-  }
-
-  /* Top header nav bar */
+  /* Header nav */
   .header-nav {
     position: fixed;
     top: 0; left: 0; width: 100%;
@@ -53,7 +44,7 @@
     background: linear-gradient(135deg,#e63946,#ff6f61);
     color: black;
     transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(230,57,70,0.9);
+    box-shadow: 0 0 20px rgba(230,57,70,0.9);
   }
 
   @keyframes floatNav {
@@ -62,38 +53,75 @@
     100% { transform: translateY(0); }
   }
 
-  h1 {
-    font-size: 3rem;
-    color: #e63946;
-    text-shadow: 0 0 20px rgba(230,57,70,1),0 0 40px rgba(230,57,70,0.8);
-    margin-bottom: 20px;
-    text-align: center;
-    animation: fadeIn 1.5s ease forwards, floatText 4s ease-in-out infinite alternate;
+  /* Particle and floating shapes */
+  #particles-js, .floating-shapes {
+    position: fixed;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    z-index: -1;
   }
 
+  /* Headings */
+  h1 {
+    font-size: 3rem;
+    color: #ff4c4c;
+    text-shadow: 0 0 20px #ff4c4c, 0 0 40px #ff6f61;
+    margin-bottom: 20px;
+    text-align: center;
+    animation: floatText 4s ease-in-out infinite alternate, fadeIn 1.5s ease forwards;
+  }
+
+  /* Paragraphs with glowing highlights */
   p {
     font-size: 1.3rem;
     color: #ccc;
     max-width: 800px;
-    margin: 20px auto;
+    margin: 25px auto;
     line-height: 1.6;
     text-align: center;
     animation: fadeIn 2s ease forwards;
+    position: relative;
+    z-index: 1;
   }
 
-  strong {
-    color: #e63946;
-    text-shadow: 0 0 10px rgba(230,57,70,0.8);
+  p strong {
+    background: linear-gradient(135deg,#e63946,#ff6f61);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 8px rgba(230,57,70,0.7);
   }
 
+  /* Floating neon blocks behind paragraphs */
+  .highlight-block {
+    position: absolute;
+    width: 150px;
+    height: 60px;
+    background: rgba(230,57,70,0.1);
+    border: 2px solid rgba(230,57,70,0.3);
+    border-radius: 15px;
+    filter: blur(10px);
+    z-index: 0;
+    animation: floatBlock 6s ease-in-out infinite alternate;
+  }
+
+  .highlight-block:nth-child(1){top:200px; left:10%;}
+  .highlight-block:nth-child(2){top:400px; right:15%;}
+  .highlight-block:nth-child(3){top:600px; left:25%;}
+
+  @keyframes floatBlock {
+    0% {transform: translateY(0) rotate(0deg);}
+    50% {transform: translateY(-20px) rotate(5deg);}
+    100% {transform: translateY(0) rotate(0deg);}
+  }
+
+  /* Animations */
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
   }
-
   @keyframes floatText {
-    0%,100%{transform: translateY(0);}
-    50%{transform: translateY(-5px);}
+    0%,100% {transform: translateY(0);}
+    50% {transform: translateY(-5px);}
   }
 
   footer {
@@ -117,6 +145,11 @@
 <!-- Particle background -->
 <div id="particles-js"></div>
 
+<!-- Floating highlight blocks -->
+<div class="highlight-block"></div>
+<div class="highlight-block"></div>
+<div class="highlight-block"></div>
+
 <!-- About content -->
 <h1>About KMNx Clan</h1>
 <p>KMNx Clan is a professional gaming clan dedicated to excellence in competitive gaming. Founded by <strong>SNIPEx</strong> and <strong>MATRIx</strong>, our mission is to bring together skilled players who are passionate about <strong>teamwork</strong>, <strong>strategy</strong>, and <strong>victory</strong>.</p>
@@ -130,12 +163,12 @@
 <script>
   particlesJS("particles-js", {
     particles: {
-      number:{value:80},
-      color:{value:"#e63946"},
+      number:{value:100},
+      color:{value:"#ff4c4c"},
       shape:{type:"circle"},
-      opacity:{value:0.5},
+      opacity:{value:0.6},
       size:{value:3},
-      line_linked:{enable:true,distance:150,color:"#e63946",opacity:0.4,width:1},
+      line_linked:{enable:true,distance:150,color:"#ff4c4c",opacity:0.3,width:1},
       move:{enable:true,speed:2}
     },
     interactivity:{events:{onhover:{enable:true,mode:"repulse"}}},
