@@ -15,8 +15,9 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
+      padding: 40px 20px;
       overflow-x: hidden;
     }
 
@@ -40,7 +41,7 @@
     }
 
     h1 {
-      margin: 30px 0 10px;
+      margin: 20px 0 10px;
       font-size: 2.8rem;
       color: #fff;
       text-shadow: 0 0 20px rgba(230,57,70,0.9);
@@ -52,11 +53,21 @@
       font-size: 1.1rem;
     }
 
-    /* Grid for members */
+    /* Grid for top 2 members */
+    .top-members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 50px; /* increased gap for top members */
+      width: 90%;
+      max-width: 700px;
+      margin-bottom: 60px;
+    }
+
+    /* Grid for remaining 8 members (4+4) */
     .members {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
+      gap: 40px; /* increased gap between remaining cards */
       width: 90%;
       max-width: 1100px;
       margin: auto;
@@ -70,7 +81,7 @@
     .card-inner {
       position: relative;
       width: 100%;
-      padding-top: 120%; /* keeps square shape */
+      padding-top: 120%;
       transform-style: preserve-3d;
       transition: transform 0.8s;
     }
@@ -112,6 +123,12 @@
       color: white;
     }
 
+    .card-front span {
+      font-size: 0.9rem;
+      color: #e63946;
+      margin-top: 5px;
+    }
+
     .card-back {
       background: linear-gradient(135deg, #e63946, #ff6f61);
       transform: rotateY(180deg);
@@ -132,16 +149,17 @@
   <h1>KMNx Clan Members</h1>
   <p>Meet the warriors of KMNx ⚡</p>
 
-  <div class="members">
-    <!-- Member Cards -->
+  <!-- Top 2 Members -->
+  <div class="top-members">
     <div class="card">
       <div class="card-inner">
         <div class="card-front">
           <img src="Discord Logo.jpg" alt="SNIPEx">
           <h3>SNIPEx</h3>
+          <span>Founder</span>
         </div>
         <div class="card-back">
-          Co-Founder, AWP King, patient sniper who never misses 🎯
+          Master sniper, strategist, and leader of KMNx 🎯
         </div>
       </div>
     </div>
@@ -151,13 +169,17 @@
         <div class="card-front">
           <img src="Discord Logo.jpg" alt="MATRIx">
           <h3>MATRIx</h3>
+          <span>Co-Founder</span>
         </div>
         <div class="card-back">
-          Co-Founder, aggressive pusher, fearless entry fragger 💥
+          Aggressive pusher, fearless fragger, driving the clan forward 💥
         </div>
       </div>
     </div>
+  </div>
 
+  <!-- Remaining 8 Members (4+4) -->
+  <div class="members">
     <div class="card">
       <div class="card-inner">
         <div class="card-front">
@@ -189,7 +211,7 @@
           <h3>Player 5</h3>
         </div>
         <div class="card-back">
-          IGL (In-Game Leader), master strategist 🧠
+          IGL, master strategist 🧠
         </div>
       </div>
     </div>
@@ -258,5 +280,4 @@
   <footer>
     © 2025 KMNx Clan | Members Page
   </footer>
-</body>
-</html>
+</b
