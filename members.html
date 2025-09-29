@@ -12,7 +12,7 @@
     background: #0d0d0d;
     color: white;
     min-height: 100vh;
-    padding-top: 80px; /* space for header */
+    padding-top: 80px;
     overflow-x: hidden;
   }
 
@@ -61,23 +61,19 @@
     z-index: -1;
   }
 
-  h1 {
+  h1, h2 {
     text-align: center;
     color: #ff4c4c;
     text-shadow: 0 0 20px #ff4c4c,0 0 40px #ff6f61;
-    margin-bottom: 40px;
-    font-size: 3rem;
-    animation: floatText 4s ease-in-out infinite alternate, fadeIn 1.5s ease forwards;
+    margin-bottom: 20px;
   }
+
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2rem; margin-top: 40px; }
 
   @keyframes floatText {
     0%,100% {transform: translateY(0);}
     50% {transform: translateY(-5px);}
-  }
-
-  @keyframes fadeIn {
-    from {opacity:0; transform: translateY(20px);}
-    to {opacity:1; transform: translateY(0);}
   }
 
   /* Members grid */
@@ -86,7 +82,7 @@
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
     gap: 25px;
     max-width: 1000px;
-    margin: 0 auto 50px auto;
+    margin: 20px auto 50px auto;
     padding: 0 20px;
   }
 
@@ -156,9 +152,9 @@
 
 <h1>Our Members</h1>
 
-<!-- Members grid -->
+<!-- Managing Team Section -->
+<h2>Managing Team</h2>
 <div class="members-grid">
-  <!-- Top 2 founders -->
   <div class="member-card">
     <img src="Discord Logo.jpg" alt="SNIPEx">
     <h3>SNIPEx</h3>
@@ -169,8 +165,14 @@
     <h3>MATRIx</h3>
     <p>Co-Founder</p>
   </div>
+</div>
 
-  <!-- Other 8 members 4+4 -->
+<!-- Spacer -->
+<div style="height: 3rem;"></div>
+
+<!-- Other Members Section -->
+<h2>Our Members</h2>
+<div class="members-grid">
   <div class="member-card">
     <img src="Discord Logo.jpg" alt="Player1">
     <h3>Player1</h3>
