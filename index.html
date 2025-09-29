@@ -19,15 +19,6 @@
       overflow: hidden;
     }
 
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KMNx Clan</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
     /* Top header nav bar */
     .header-nav {
       position: fixed;
@@ -62,23 +53,10 @@
     }
 
     /* Push content below header */
-    body > header, body > section {
+    body > #particles-js, body > .logo, body > h1, body > p, body > .buttons {
       margin-top: 80px;
     }
-  </style>
-</head>
-<body>
 
-  <!-- Top navigation bar -->
-  <nav class="header-nav">
-    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-    <a href="members.html"><i class="fa-solid fa-users"></i> Members</a>
-    <a href="about.html"><i class="fa-solid fa-info-circle"></i> About</a>
-    <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
-    <a href="links.html"><i class="fa-solid fa-link"></i> Links</a>
-  </nav>
-
-  
     /* Particle background */
     #particles-js {
       position: fixed;
@@ -100,97 +78,4 @@
     }
 
     @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 30px rgba(230,57,70,0.7); }
-      100% { transform: scale(1.1); box-shadow: 0 0 50px rgba(230,57,70,1); }
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-10px) scale(1.02); }
-    }
-
-    h1 {
-      font-size: 3rem;
-      color: #e63946;
-      text-shadow: 0 0 20px rgba(230,57,70,1), 0 0 40px rgba(230,57,70,0.8);
-      margin: 10px 0;
-      animation: fadeIn 1.5s ease forwards;
-    }
-
-    p {
-      font-size: 1.3rem;
-      color: #ccc;
-      margin-bottom: 30px;
-      animation: fadeIn 1.5s ease forwards;
-      animation-delay: 1s;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Buttons */
-    .buttons a {
-      display: inline-block;
-      margin: 10px;
-      padding: 15px 30px;
-      background: #1a1a1a;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2rem;
-      border-radius: 12px;
-      border: 2px solid #e63946;
-      box-shadow: 0 0 20px rgba(230,57,70,0.5);
-      transition: 0.3s ease;
-    }
-
-    .buttons a:hover {
-      background: linear-gradient(135deg, #e63946, #ff6f61);
-      color: black;
-      transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(230,57,70,0.9);
-    }
-
-    footer {
-      margin-top: 50px;
-      font-size: 14px;
-      color: #777;
-    }
-  </style>
-</head>
-<body>
-  <div id="particles-js"></div>
-
-  <img src="Discord Logo.jpg" alt="KMNx Logo" class="logo">
-  <h1>KMNx Clan</h1>
-  <p>Join the elite. Play with us. Dominate the battlefield. 🚀</p>
-
-  <div class="buttons">
-    <a href="members.html"><i class="fa-solid fa-users"></i> Members</a>
-    <a href="links.html"><i class="fa-solid fa-link"></i> Links</a>
-    <a href="https://discord.gg/yourinvite"><i class="fa-brands fa-discord"></i> Discord</a>
-  </div>
-
-  <footer>© 2025 KMNx Clan | Home Page</footer>
-
-  <!-- Particle JS -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 100 },
-        "color": { "value": "#e63946" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.5 },
-        "size": { "value": 3 },
-        "line_linked": { "enable": true, "distance": 150, "color": "#e63946", "opacity": 0.4, "width": 1 },
-        "move": { "enable": true, "speed": 2 }
-      },
-      "interactivity": { "events": { "onhover": { "enable": true, "mode": "repulse" } } },
-      "retina_detect": true
-    });
-  </script>
-</body>
-</html>
+      0% { transform: scale(1); box-sha
