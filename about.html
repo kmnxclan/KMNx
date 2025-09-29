@@ -53,49 +53,18 @@
     100% { transform: translateY(0); }
   }
 
-  /* Particle and floating shapes */
-  #particles-js, .floating-shapes {
+  /* Particle background */
+  #particles-js {
     position: fixed;
     width: 100%; height: 100%;
     top: 0; left: 0;
     z-index: -1;
   }
 
-  /* Headings */
-  h1 {
-    font-size: 3rem;
-    color: #ff4c4c;
-    text-shadow: 0 0 20px #ff4c4c, 0 0 40px #ff6f61;
-    margin-bottom: 20px;
-    text-align: center;
-    animation: floatText 4s ease-in-out infinite alternate, fadeIn 1.5s ease forwards;
-  }
-
-  /* Paragraphs with glowing highlights */
-  p {
-    font-size: 1.3rem;
-    color: #ccc;
-    max-width: 800px;
-    margin: 25px auto;
-    line-height: 1.6;
-    text-align: center;
-    animation: fadeIn 2s ease forwards;
-    position: relative;
-    z-index: 1;
-  }
-
-  p strong {
-    background: linear-gradient(135deg,#e63946,#ff6f61);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 8px rgba(230,57,70,0.7);
-  }
-
-  /* Floating neon blocks behind paragraphs */
+  /* Floating neon blocks */
   .highlight-block {
     position: absolute;
-    width: 150px;
-    height: 60px;
+    width: 150px; height: 60px;
     background: rgba(230,57,70,0.1);
     border: 2px solid rgba(230,57,70,0.3);
     border-radius: 15px;
@@ -103,7 +72,6 @@
     z-index: 0;
     animation: floatBlock 6s ease-in-out infinite alternate;
   }
-
   .highlight-block:nth-child(1){top:200px; left:10%;}
   .highlight-block:nth-child(2){top:400px; right:15%;}
   .highlight-block:nth-child(3){top:600px; left:25%;}
@@ -114,14 +82,47 @@
     100% {transform: translateY(0) rotate(0deg);}
   }
 
-  /* Animations */
-  @keyframes fadeIn {
-    from {opacity:0; transform: translateY(20px);}
-    to {opacity:1; transform: translateY(0);}
+  /* Headings */
+  h1 {
+    font-size: 3rem;
+    color: #ff4c4c;
+    text-shadow: 0 0 20px #ff4c4c,0 0 40px #ff6f61;
+    margin-bottom: 20px;
+    text-align: center;
+    animation: floatText 4s ease-in-out infinite alternate, fadeIn 1.5s ease forwards;
   }
+
   @keyframes floatText {
     0%,100% {transform: translateY(0);}
     50% {transform: translateY(-5px);}
+  }
+
+  /* Paragraphs */
+  p {
+    font-size: 1.3rem;
+    color: #ccc;
+    max-width: 800px;
+    margin: 25px auto;
+    line-height: 1.6;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+    position: relative;
+    z-index: 1;
+  }
+
+  p strong {
+    background: linear-gradient(135deg,#e63946,#ff6f61);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(230,57,70,0.8);
+  }
+
+  p.visible {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: 0 0 15px rgba(255,76,76,0.8);
   }
 
   footer {
@@ -145,7 +146,7 @@
 <!-- Particle background -->
 <div id="particles-js"></div>
 
-<!-- Floating highlight blocks -->
+<!-- Floating neon blocks -->
 <div class="highlight-block"></div>
 <div class="highlight-block"></div>
 <div class="highlight-block"></div>
@@ -173,6 +174,18 @@
     },
     interactivity:{events:{onhover:{enable:true,mode:"repulse"}}},
     retina_detect:true
+  });
+
+  // Scroll reveal effect
+  const paragraphs = document.querySelectorAll('p');
+  window.addEventListener('scroll', () => {
+    const triggerBottom = window.innerHeight / 5 * 4;
+    paragraphs.forEach(p => {
+      const pTop = p.getBoundingClientRect().top;
+      if(pTop < triggerBottom){
+        p.classList.add('visible');
+      }
+    });
   });
 </script>
 
